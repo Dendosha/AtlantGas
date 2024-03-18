@@ -1,26 +1,31 @@
 :root {
-	// Base colors
-	--clr-bg: #2d2d2d;
-
-	// Text colors
-	--clr-text-default: rgb(255, 255, 255);
-	// --clr-text-default-050: rgb(255, 255, 255, 0.5);
+	// Background color
+	--clr-bg: rgb(45, 45, 45);
 
 	// Primary colors
-	// --clr-primary: rgb(0, 0, 0);
-	// --clr-primary-050: rgb(0, 0, 0, 0.5);
+	--clr-primary: rgb(33, 148, 255);
+	--clr-primary-080: rgb(33, 148, 255, 0.8);
+	--clr-primary-005: rgb(33, 148, 255, 0.05);
 
 	// Secondary colors
-	// --clr-secondary: rgb(0, 0, 0);
-	// --clr-secondary-050: rgb(0, 0, 0, 0.5);
+	--clr-secondary: rgb(241, 241, 241);
+	--clr-secondary-070: rgb(241, 241, 241, 0.7);
+	--clr-secondary-040: rgb(241, 241, 241, 0.4);
+	--clr-secondary-020: rgb(241, 241, 241, 0.2);
+
+	// Text colors
+	--clr-text-default: var(--clr-secondary);
+	--clr-text-default-070: var(--clr-secondary-070);
+	--clr-text-testimonial: rgb(45, 45, 45);
+	--clr-text-map: rgb(27, 38, 57);
 
 	// Fonts
-	--ff-primary: 'Arial', Helvetica, sans-serif;
-	--ff-secondary: 'Times New Roman', Times, serif;
+	--ff-primary: 'OpenSans', sans-serif;
+	--ff-secondary: 'RussoOne', sans-serif;
 
 	--fw-normal: 400;
 }
 
 // Sizes
-$containerWidth: 1260;
-$containerPadding: 25;
+$containerWidth: 1140;
+$containerPadding: 20;
