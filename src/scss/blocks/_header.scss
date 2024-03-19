@@ -1,0 +1,120 @@
+.header {
+
+	// .header__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-block: rem(20) 0;
+	}
+
+	// .header__logo
+
+	&__logo {
+		display: grid;
+		grid-template-columns: minmax(auto, rem(270)) min-content minmax(auto, rem(130));
+		gap: rem(8) rem(24);
+		align-items: end;
+
+		@media screen and (max-width: em(992)) {
+			grid-template-columns: minmax(auto, rem(240)) min-content minmax(auto, rem(130));
+			gap: rem(8) rem(20);
+		}
+
+		@media screen and (max-width: em(768)) {
+			grid-template-columns: minmax(auto, rem(220));
+			gap: rem(8) 0;
+		}
+
+		@media screen and (max-width: em(480)) {
+			grid-template-columns: revert;
+		}
+	}
+
+	// .header__logo-image
+
+	&__logo-image {}
+
+	// .header__logo-separator
+
+	&__logo-separator {
+		display: block;
+		height: 45%;
+		width: 1px;
+		background-color: #fff;
+
+		@media screen and (max-width: em(768)) {
+			display: none;
+		}
+	}
+
+	// .header__logo-slogan
+
+	&__logo-slogan {
+		font-style: italic;
+		font-size: rem(16);
+		text-wrap: balance;
+
+		line-height: 1.125;
+		color: var(--clr-text-highlighted);
+
+		@media screen and (max-width: em(768)) {
+			display: none;
+		}
+	}
+
+	// .header__logo-description
+
+	&__logo-description {
+		grid-column: 1 / -1;
+
+		text-transform: uppercase;
+		font-size: rem(14);
+		font-weight: var(--fw-bold);
+
+		@media screen and (max-width: em(480)) {
+			display: none;
+		}
+	}
+
+	// .header__urgent-question
+
+	&__urgent-question {
+		display: grid;
+		gap: rem(5);
+	}
+
+	// .header__urgent-question-number
+
+	&__urgent-question-number {
+		font-family: var(--ff-secondary);
+		font-size: rem(24);
+
+		@media screen and (max-width: em(992)) {
+			font-size: rem(20);
+		}
+
+		@media screen and (max-width: em(768)) {
+			font-size: rem(18);
+		}
+
+		@media screen and (max-width: em(575)) {
+			font-size: rem(16);
+		}
+	}
+
+	// .header__urgent-question-span
+
+	&__urgent-question-span {
+		font-weight: 700;
+		font-size: rem(16);
+		text-decoration: underline;
+		text-decoration-skip-ink: none;
+		color: var(--clr-text-highlighted);
+
+		@media screen and (max-width: em(768)) {
+			font-size: rem(14);
+		}
+	}
+}

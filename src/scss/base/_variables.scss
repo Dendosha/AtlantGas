@@ -16,6 +16,7 @@
 	// Text colors
 	--clr-text-default: var(--clr-secondary);
 	--clr-text-default-070: var(--clr-secondary-070);
+	--clr-text-highlighted: var(--clr-primary);
 	--clr-text-testimonial: rgb(45, 45, 45);
 	--clr-text-map: rgb(27, 38, 57);
 
@@ -24,8 +25,9 @@
 	--ff-secondary: 'RussoOne', sans-serif;
 
 	--fw-normal: 400;
+	--fw-bold: 700;
 }
 
 // Sizes
 $containerWidth: 1140;
-$containerPadding: 20;
+$containerPadding: 32;
