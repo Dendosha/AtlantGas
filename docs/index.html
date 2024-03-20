@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>Template</title>
+	<title>Атлант Газ - заправка газгольдеров в Москве и Московской области</title>
 
 	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 	<link rel="icon" type="image/png" href="img/favicon.png">
@@ -13,23 +13,63 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 
-	<link rel="stylesheet" href="css/main.min.css?_v=20240306234205">
-	<script defer src="js/main.min.js?_v=20240306234205"></script>
+	<link rel="stylesheet" href="css/main.min.css?_v=20240320185416">
+	<script defer src="js/main.min.js?_v=20240320185416"></script>
 	
-	<script defer src="js/index.min.js?_v=20240306234205"></script>
+	<script defer src="js/index.min.js?_v=20240320185416"></script>
 	
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
-
+	<div class="header__container --container">
+		<a href="#" class="header__logo-link">
+			<picture>
+				<source srcset="img/logo-mobile.svg" media="(max-width: 30em)">
+				<img src="img/logo.svg" alt="Логотип Атлант Газ" class="header__logo-img">
+			</picture>
+		</a>
+		<span class="header__logo-separator"></span>
+		<span class="header__logo-slogan">Расправь плечи в теплом доме</span>
+		<div class="header__urgent-call">
+			<a href="tel:+79263306834" class="header__urgent-call-number">+7 926 330-68-34</a>
+			<a href="tel:+79263306834" class="header__urgent-call-text">Срочный вопрос</a>
+		</div>
+	</div>
 </header>
 		<main class="page">
-			<h1 style="margin-top: 5rem; text-align: center; font-size: 5rem;">Template page</h1>
+
 		</main>
 		<footer class="footer">
-
+	<section class="footer__map map">
+		<div class="map__container --container">
+			<div class="map__text-block">
+				<hgroup class="map__hgroup">
+					<h2 class="map__title">Посетите наш уютный офис</h2>
+					<p class="map__subtitle">где мы сможем вас полностью проконсультировать по всем вопросам</p>
+				</hgroup>
+				<span class="map__separator"></span>
+				<div class="map__contacts">
+					<div class="map__contact">
+						<h3 class="map__contact-title">Офис</h3>
+						<span class="map__contact-info">Видное, Белокаменное шоссе, 20</span>
+					</div>
+					<div class="map__contact">
+						<h3 class="map__contact-title">Телефон</h3>
+						<a href="tel:+79263306834" class="map__contact-info">+7 926 330-68-34</a>
+					</div>
+				</div>
+			</div>
+			<div id="interactiveMap" class="map__interactive-map"></div>
+		</div>
+	</section>
+	<section class="footer__terms-and-conditions terms-and-conditions">
+		<div class="terms-and-conditions__container --container">
+			<a href="#" class="terms-and-conditions__document-link">Политика конфиденциальности</a>
+			<a href="#" class="terms-and-conditions__document-link">Согласие на обработку персональных данных</a>
+		</div>
+	</section>
 </footer>
 	</div>
 </body>
