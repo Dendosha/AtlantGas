@@ -19,23 +19,15 @@
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
   src: url("../fonts/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans-Italic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: RussoOne;
+  font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -51,7 +43,15 @@
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RussoOne;
+  font-display: swap;
+  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -481,6 +481,36 @@ body.--burger-menu-opened {
   }
 }
 
+@media screen and (max-width: 42.1875em) {
+  .header__container {
+    grid-template-columns: minmax(auto, 12.5rem) 1fr;
+    grid-template-rows: 4fr 1fr;
+    align-items: end;
+  }
+
+  .header__logo-separator {
+    display: none;
+    grid-row: revert;
+  }
+
+  .header__logo-slogan {
+    display: none;
+    grid-row: revert;
+  }
+
+  .header__urgent-call {
+    grid-row: 1/2;
+  }
+
+  .header__urgent-call-number {
+    font-size: 1rem;
+  }
+
+  .header__urgent-call-text {
+    font-size: 0.875rem;
+  }
+}
+
 @media screen and (max-width: 30em) {
   .footer__map:not(:last-child) {
     margin-bottom: 1.25rem;
@@ -514,35 +544,5 @@ body.--burger-menu-opened {
     grid-template-columns: auto 1fr;
     grid-template-rows: revert;
     align-items: center;
-  }
-}
-
-@media screen and (max-width: 42.1875em) {
-  .header__container {
-    grid-template-columns: minmax(auto, 12.5rem) 1fr;
-    grid-template-rows: 4fr 1fr;
-    align-items: end;
-  }
-
-  .header__logo-separator {
-    display: none;
-    grid-row: revert;
-  }
-
-  .header__logo-slogan {
-    display: none;
-    grid-row: revert;
-  }
-
-  .header__urgent-call {
-    grid-row: 1/2;
-  }
-
-  .header__urgent-call-number {
-    font-size: 1rem;
-  }
-
-  .header__urgent-call-text {
-    font-size: 0.875rem;
   }
 }
