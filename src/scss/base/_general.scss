@@ -1,5 +1,10 @@
 @use "sass:math";
 
+svg {
+	--clr-svg-primary: var(--clr-primary);
+	--clr-svg-secondary: var(--clr-secondary)
+}
+
 // Regular container
 .--container {
 	max-width: rem($containerWidth + $containerPadding * 2);
@@ -11,7 +16,7 @@
 .--grid-content {
 	display: grid;
 	grid-template-columns:
-		[full-width-start] 1fr [breakout-start] rem($containerPadding) [content-start] minmax(auto, rem($containerWidth)) [content-end] rem($containerPadding) [breakout-end] 1fr [full-width-end];
+		[full-width-start] 1fr [wide-start] 1fr [breakout-start] rem($containerPadding) [content-start] minmax(auto, rem($containerWidth)) [content-end] rem($containerPadding) [breakout-end] 1fr [wide-end] 1fr [full-width-end];
 }
 
 .--visually-hidden {
