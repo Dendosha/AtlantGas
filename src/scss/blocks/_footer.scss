@@ -24,6 +24,14 @@
 	// .footer__terms-and-conditions
 
 	&__terms-and-conditions {}
+
+	@media screen and (max-width: em(768)) {
+		margin-bottom: rem(50);
+	}
+
+	@media screen and (max-width: em(480)) {
+		margin-bottom: rem(30);
+	}
 }
 
 .map {
@@ -31,6 +39,8 @@
 	// .map__container
 
 	&__container {
+		grid-column: content-start / content-end;
+
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 
@@ -39,7 +49,6 @@
 		background: var(--clr-secondary);
 
 		max-width: rem($containerWidth);
-		padding-inline: 0;
 		overflow: hidden;
 
 		@media screen and (max-width: em(768)) {
@@ -47,6 +56,12 @@
 			grid-auto-rows: 1fr;
 
 			border-radius: rem(30);
+		}
+
+		@media screen and (max-width: em(480)) {
+			grid-column: full-width-start / full-width-end;
+
+			border-radius: rem($containerPadding);
 		}
 	}
 
@@ -57,6 +72,10 @@
 
 		@media screen and (max-width: em(768)) {
 			padding: rem(30);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding: rem($containerPadding);
 		}
 	}
 
@@ -94,7 +113,7 @@
 		}
 
 		@media screen and (max-width: em(480)) {
-			font-size: rem(24);
+			font-size: rem(22);
 
 			&:not(:last-child) {
 				margin-bottom: rem(10);
@@ -115,6 +134,10 @@
 		@media screen and (max-width: em(992)) {
 			font-size: rem(16);
 		}
+
+		@media screen and (max-width: em(480)) {
+			font-size: rem(14);
+		}
 	}
 
 	// .map__separator
@@ -122,7 +145,7 @@
 	&__separator {
 		display: block;
 
-		border: 1px solid rgba(27, 38, 57, 0.2);
+		border: rem(1) solid rgba(27, 38, 57, 0.2);
 		height: 0;
 		width: 100%;
 
@@ -154,7 +177,15 @@
 			font-size: rem(16);
 		}
 
+		@media screen and (max-width: em(768)) {
+			&:not(:last-child) {
+				margin-bottom: rem(30);
+			}
+		}
+
 		@media screen and (max-width: em(480)) {
+			font-size: rem(14);
+
 			&:not(:last-child) {
 				margin-bottom: rem(20);
 			}
@@ -203,18 +234,22 @@
 	// .terms-and-conditions__container
 
 	&__container {
+		grid-column: content-start / content-end;
+
 		display: flex;
 		justify-content: space-between;
 		gap: rem(10);
 
 		max-width: rem($containerWidth);
+		padding-inline: rem(32);
 
 		@media screen and (max-width: em(768)) {
-			font-size: rem(12);
+			padding-inline: rem(24);
 		}
 
 		@media screen and (max-width: em(480)) {
 			flex-direction: column;
+			padding-inline: 0;
 		}
 	}
 
