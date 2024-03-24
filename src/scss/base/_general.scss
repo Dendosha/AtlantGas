@@ -35,3 +35,18 @@ svg {
 .--burger {
 	display: none;
 }
+
+%heading-2 {
+	font-family: var(--ff-secondary);
+	font-size: rem(36);
+
+	@media screen and (max-width: em(768)) {}
+
+	@media screen and (max-width: em(480)) {
+		font-size: rem(32);
+	}
+
+	@media screen and (max-width: em(375)) {
+		font-size: rem(24);
+	}
+}
