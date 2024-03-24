@@ -28,7 +28,19 @@
 			padding-block: rem(20);
 		}
 	}
+
+	// .page__advantages
+
+	&__advantages {
+		padding-block-start: rem(60);
+
+		@media screen and (max-width: em(480)) {
+			padding-block-start: rem(40);
+		}
+	}
 }
+
+// Hero section
 
 .hero {
 
@@ -318,12 +330,13 @@
 	}
 }
 
-.prices {
-	position: relative;
+// Prices section
 
+.prices {
 	// .prices__container
 
 	&__container {
+		position: relative;
 		grid-column: content-start / content-end;
 
 		display: grid;
@@ -345,18 +358,11 @@
 	&__title {
 		grid-column: 1 / -1;
 
+		@extend %heading-2;
+
 		font-family: var(--ff-secondary);
-		font-size: rem(36);
 		text-align: center;
 		color: var(--clr-text-highlighted);
-
-		@media screen and (max-width: em(480)) {
-			font-size: rem(32);
-		}
-
-		@media screen and (max-width: em(375)) {
-			font-size: rem(24);
-		}
 	}
 
 	// .prices__gas-text-block
@@ -455,6 +461,29 @@
 
 	&__scrolldown-button {
 		position: absolute;
+		bottom: rem(-85);
+
+		width: rem(100);
+		height: rem(65);
+
+		background-color: transparent;
+		background-image: url('@img/icons/scroll-arrow.svg');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+
+		justify-self: center;
+
+		@media screen and (max-width: em(768)) {
+			bottom: rem(-75);
+		}
+
+		@media screen and (max-width: em(480)) {
+			bottom: rem(-45);
+
+			width: rem(70);
+			height: rem(45);
+		}
+
 	}
 }
 
@@ -492,19 +521,13 @@
 	// .gas-text-block__title
 
 	&__title {
-		font-size: rem(36);
+		@extend %heading-2;
 
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
 
-		@media screen and (max-width: em(768)) {
-			font-size: rem(30);
-		}
-
 		@media screen and (max-width: em(375)) {
-			font-size: rem(24);
-
 			&:not(:last-child) {
 				margin-bottom: rem(5);
 			}
@@ -556,5 +579,159 @@
 		font-size: rem(18);
 		text-align: center;
 		color: var(--clr-text-default);
+	}
+}
+
+// Advantages section
+
+.advantages {
+
+	// .advantages__container
+
+	&__container {
+		grid-column: content-start / content-end;
+	}
+
+	// .advantages__title
+
+	&__title {
+		grid-column: 1 / -1;
+
+		@extend %heading-2;
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+
+	// .advantages__advantages-list
+
+	&__advantages-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: rem(25) rem(15);
+
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+		}
+	}
+
+	// .advantages__advantage
+
+	&__advantage {
+		flex: 1 1 rem(365);
+
+		display: grid;
+		grid-template-rows: rem(100) repeat(2, auto);
+		grid-auto-columns: min(100%, rem(365));
+		justify-content: center;
+		justify-items: center;
+
+		text-align: center;
+
+		&:nth-child(3n + 2) {
+			padding-top: rem(40);
+
+			@media screen and (max-width: em(1200)) {
+				padding-top: 0;
+			}
+		}
+	}
+
+	// .advantages__advantage-img
+
+	&__advantage-img {
+		align-self: end;
+
+		&:not(:last-child) {
+			margin-bottom: rem(8);
+		}
+	}
+
+	// .advantages__advantage-title
+
+	&__advantage-title {
+		font-family: var(--ff-secondary);
+		font-size: rem(24);
+		text-wrap: pretty;
+		color: var(--clr-text-highlighted);
+
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	// .advantages__advantage-text
+
+	&__advantage-text {
+		font-weight: 300;
+		font-size: rem(16);
+	}
+
+	// .advantages__competitive-advantage
+
+	&__competitive-advantage {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(15) rem(40);
+
+		@media screen and (max-width: em(992)) {
+			grid-template-columns: unset;
+			align-items: center;
+			justify-content: center;
+
+			&>* {
+				grid-column: 1 / -1;
+				grid-row: 1 / -1;
+			}
+		}
+	}
+
+	// .advantages__competitive-advantage-picture
+
+	&__competitive-advantage-picture {
+		object-fit: cover;
+	}
+
+	// .advantages__competitive-advantage-text-block
+
+	&__competitive-advantage-text-block {
+		@media screen and (max-width: em(992)) {
+			max-width: rem(600);
+		}
+	}
+
+	// .advantages__competitive-advantage-text
+
+	&__competitive-advantage-text {
+		font-family: var(--ff-secondary);
+		@extend %heading-2;
+		text-wrap: pretty;
+
+		&>span {
+			color: var(--clr-text-highlighted);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	// .advantages__competitive-advantage-caption
+
+	&__competitive-advantage-caption {
+		padding: rem(8) rem(13);
+
+		font-weight: 800;
+		font-size: rem(14);
+		text-align: center;
+
+		background-color: var(--clr-primary);
+
+		@media screen and (max-width: em(480)) {
+			font-size: rem(12);
+		}
 	}
 }
