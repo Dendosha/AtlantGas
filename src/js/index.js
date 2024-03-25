@@ -34,3 +34,26 @@ const swiper = new Swiper('.swiper', {
 		prevEl: '.swiper-button-prev',
 	},
 })
+
+const faqAccordion = document.querySelector('.faq__accordion')
+faqAccordion.addEventListener('click', (e) => {
+	const currentDetails = e.target.closest('details')
+
+	if (currentDetails) {
+		e.preventDefault()
+
+		const detailsContent = currentDetails.querySelector('.faq__answer')
+		const animationDuration = parseFloat(getComputedStyle(detailsContent).getPropertyValue('--animation-duration')) * 1000
+
+		if (!currentDetails.hasAttribute('open')) {
+			currentDetails.setAttribute('open', '')
+		} else {
+			currentDetails.classList.add('--closing')
+
+			setTimeout(() => {
+				currentDetails.classList.remove('--closing')
+				currentDetails.removeAttribute('open')
+			}, animationDuration)
+		}
+	}
+})
