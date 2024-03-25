@@ -39,16 +39,15 @@
 	// .map__container
 
 	&__container {
-		grid-column: content-start / content-end;
+		grid-column: breakout-start / breakout-end;
 
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 
 		border-radius: rem(35);
 		box-shadow: 0 0 rem(20) 0 rgba(0, 0, 0, 0.25);
-		background: var(--clr-secondary);
+		background-color: var(--clr-secondary);
 
-		max-width: rem($containerWidth);
 		overflow: hidden;
 
 		@media screen and (max-width: em(768)) {
@@ -59,8 +58,6 @@
 		}
 
 		@media screen and (max-width: em(480)) {
-			grid-column: full-width-start / full-width-end;
-
 			border-radius: rem($containerPadding);
 		}
 	}
@@ -239,9 +236,6 @@
 		display: flex;
 		justify-content: space-between;
 		gap: rem(10);
-
-		max-width: rem($containerWidth);
-		padding-inline: rem(32);
 
 		@media screen and (max-width: em(768)) {
 			padding-inline: rem(24);
