@@ -41,18 +41,18 @@
 }
 
 @font-face {
-  font-family: RussoOne;
-  font-display: swap;
-  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RussoOne;
+  font-display: swap;
+  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -227,6 +227,7 @@ svg {
   display: none;
 }
 
+.faq__title,
 .testimonials__title,
 .gas-volumes__title,
 .advantages__competitive-advantage-text,
@@ -342,13 +343,12 @@ body.--burger-menu-opened {
 }
 
 .map__container {
-  grid-column: content-start/content-end;
+  grid-column: breakout-start/breakout-end;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 2.1875rem;
   box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.25);
-  background: var(--clr-secondary);
-  max-width: 71.25rem;
+  background-color: var(--clr-secondary);
   overflow: hidden;
 }
 
@@ -426,8 +426,6 @@ body.--burger-menu-opened {
   display: flex;
   justify-content: space-between;
   gap: 0.625rem;
-  max-width: 71.25rem;
-  padding-inline: 2rem;
 }
 
 .terms-and-conditions__document-link {
@@ -520,6 +518,11 @@ body.--burger-menu-opened {
 }
 
 .page__testimonials {
+  padding-block: 2.5rem;
+}
+
+.page__faq {
+  background-color: var(--clr-primary-005);
   padding-block: 2.5rem;
 }
 
@@ -1049,6 +1052,102 @@ body.--burger-menu-opened {
   opacity: 0.4;
 }
 
+.faq {
+  --animation-duration: 0.3s;
+}
+
+.faq__container {
+  grid-column: breakout-start/breakout-end;
+}
+
+.faq__title {
+  text-align: center;
+  color: var(--clr-text-highlighted);
+  padding-inline: 2rem;
+}
+
+.faq__title:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
+.faq__accordion {
+  display: grid;
+}
+
+.faq__question-block {
+  cursor: pointer;
+  border-top: 0.125rem solid rgba(255, 255, 255, 0.1);
+}
+
+.faq__question-block:last-child {
+  border-bottom: 0.125rem solid rgba(255, 255, 255, 0.1);
+}
+
+.faq__question-block[open] > summary {
+  color: var(--clr-text-highlighted);
+}
+
+.faq__question-block[open] > summary > .faq__question-icon {
+  --clr-svg-primary: var(--clr-primary);
+  transform: rotate(-90deg);
+}
+
+.faq__question-block[open] > .faq__answer {
+  grid-template-rows: 1fr;
+  padding: 0 2rem 1.5625rem 4.5625rem;
+}
+
+.faq__question-block.--closing > summary {
+  color: var(--clr-text-default);
+}
+
+.faq__question-block.--closing > summary > .faq__question-icon {
+  --clr-svg-primary: var(--clr-secondary);
+  transform: rotate(90deg);
+}
+
+.faq__question-block.--closing > .faq__answer {
+  grid-template-rows: 0fr;
+  padding-block: 0;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+  padding: 1.5625rem 2rem;
+  list-style: none;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question-icon {
+  --clr-svg-primary: var(--clr-secondary);
+  align-self: start;
+  flex: 0 0 1rem;
+  height: 1rem;
+  transform: rotate(90deg);
+  transition: transform var(--animation-duration);
+}
+
+.faq__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 0 2rem 1.5625rem 4.5625rem;
+  font-weight: 300;
+  font-size: 1rem;
+  transition: all var(--animation-duration);
+}
+
+.faq__answer > p {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 23.4375em) {
   .gas-volume-selection__tab {
     display: grid;
@@ -1144,10 +1243,14 @@ body.--burger-menu-opened {
   }
 
   .page__gas-volumes {
-    padding-block: 1.5625rem 2.8125rem;
+    padding-block: 1.875rem 2.8125rem;
   }
 
   .page__testimonials {
+    padding-block: 2.1875rem;
+  }
+
+  .page__faq {
     padding-block: 2.1875rem;
   }
 
@@ -1414,9 +1517,25 @@ body.--burger-menu-opened {
     -webkit-line-clamp: 6;
     overflow: hidden;
   }
+
+  .faq__question-block[open] > .faq__answer {
+    padding: 0 2rem 0.9375rem 3.9375rem;
+  }
+
+  .faq__question {
+    gap: 0.9375rem;
+    padding: 0.9375rem 2rem;
+    font-size: 0.875rem;
+  }
+
+  .faq__answer {
+    padding: 0 2rem 0.9375rem 3.9375rem;
+    font-size: 0.875rem;
+  }
 }
 
 @media screen and (max-width: 30em) {
+  .faq__title,
   .testimonials__title,
   .gas-volumes__title,
   .advantages__competitive-advantage-text,
@@ -1435,7 +1554,6 @@ body.--burger-menu-opened {
   }
 
   .map__container {
-    grid-column: full-width-start/full-width-end;
     border-radius: 2rem;
   }
 
@@ -1504,6 +1622,10 @@ body.--burger-menu-opened {
   }
 
   .page__testimonials {
+    padding-block: 1.875rem;
+  }
+
+  .page__faq {
     padding-block: 1.875rem;
   }
 
@@ -1604,6 +1726,7 @@ body.--burger-menu-opened {
 }
 
 @media screen and (max-width: 23.4375em) {
+  .faq__title,
   .testimonials__title,
   .gas-volumes__title,
   .advantages__competitive-advantage-text,
