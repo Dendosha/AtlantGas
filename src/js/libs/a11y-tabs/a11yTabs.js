@@ -50,7 +50,10 @@ class Tabs {
 	}
 
 	clickHandler(e) {
-		if (e.target.closest('[role="tab"]')) this.openTab(e.target)
+		if (e.target.closest('[role="tab"]')) {
+			e.preventDefault()
+			this.openTab(e.target.closest('[role="tab"]'))
+		}
 	}
 
 	keydownHandler(e) {

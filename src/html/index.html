@@ -276,6 +276,56 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__gas-volumes gas-volumes --grid-content">
+				<div class="gas-volumes__container">
+					<h2 id="gas-volume-selection-title" class="gas-volumes__title">Выберите свой объём Газовоза</h2>
+					<div data-tabs="tabs" class="gas-volumes__gas-volume-selection gas-volume-selection">
+						<ul data-tabs="tablist" aria-labelledby="gas-volume-selection-title" class="gas-volume-selection__tablist">
+							<li id="small-volume-tab" class="gas-volume-selection__tablist-item">
+								<a href="#small-volume-panel" class="gas-volume-selection__tab">
+									<span>Малый</span>
+									<span>2000 л.</span>
+								</a>
+							</li>
+							<li id="medium-volume-tab" class="gas-volume-selection__tablist-item">
+								<a href="#medium-volume-panel" class="gas-volume-selection__tab">
+									<span>Средний</span>
+									<span>6000 л.</span>
+								</a>
+							</li>
+							<li id="standard-volume-tab" class="gas-volume-selection__tablist-item">
+								<a href="#standard-volume-panel" class="gas-volume-selection__tab">
+									<span>Стандартный</span>
+									<span>10 000 л.</span>
+								</a>
+							</li>
+							<li id="wholesale-volume-tab" class="gas-volume-selection__tablist-item">
+								<a href="#wholesale-volume-panel" class="gas-volume-selection__tab">
+									<span>Оптовый</span>
+									<span>40 000 л.</span>
+								</a>
+							</li>
+						</ul>
+						<div data-tabs="tabpanels" class="gas-volume-selection__tabpanels">
+							<div id="small-volume-panel" aria-labelledby="small-volume-tab" class="gas-volume-selection__tabpanel">
+								<img src="@img/sections/gas-volumes/small-gas-volume.png" alt="Малый объём газа">
+							</div>
+							<div id="medium-volume-panel" aria-labelledby="medium-volume-tab" class="gas-volume-selection__tabpanel">
+								<img src="@img/sections/gas-volumes/medium-gas-volume.png" alt="Средний объём газа">
+							</div>
+							<div id="standard-volume-panel" aria-labelledby="standard-volume-tab"
+								class="gas-volume-selection__tabpanel">
+								<img src="@img/sections/gas-volumes/standard-gas-volume.png" alt="Стандартный объём газа">
+							</div>
+							<div id="wholesale-volume-panel" aria-labelledby="wholesale-volume-tab"
+								class="gas-volume-selection__tabpanel">
+								<img src="@img/sections/gas-volumes/wholesale-gas-volume.png" alt="Оптовый объём газа">
+							</div>
+						</div>
+					</div>
+					<button class="gas-volumes__order-button">Заказать газ</button>
+				</div>
+			</section>
 		</main>
 		@@include('./blocks/footer.html', {})
 	</div>
