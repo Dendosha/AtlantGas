@@ -1,0 +1,23 @@
+@keyframes detailsOpening {
+	0% {
+		grid-template-rows: 0fr;
+		padding: 0 rem(32) 0 rem(32 + 25 + 16);
+	}
+
+	100% {
+		grid-template-rows: 1fr;
+		padding: 0 rem(32) rem(25) rem(32 + 25 + 16);
+	}
+}
+
+@keyframes detailsClosing {
+	0% {
+		grid-template-rows: 1fr;
+		padding: 0 rem(32) rem(25) rem(32 + 25 + 16);
+	}
+
+	100% {
+		grid-template-rows: 0fr;
+		padding: 0 rem(32) 0 rem(32 + 25 + 16);
+	}
+}

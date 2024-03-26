@@ -35,25 +35,39 @@ const swiper = new Swiper('.swiper', {
 	},
 })
 
-const faqAccordion = document.querySelector('.faq__accordion')
-faqAccordion.addEventListener('click', (e) => {
-	const currentDetails = e.target.closest('details')
+const pageDetails = document.querySelectorAll('.faq__question-block')
+const detailsDropdowns = document.querySelectorAll('.faq__answer')
 
-	if (currentDetails) {
-		e.preventDefault()
+pageDetails.forEach((details, index) => {
+	let animationPlaying = false
 
-		const detailsContent = currentDetails.querySelector('.faq__answer')
-		const animationDuration = parseFloat(getComputedStyle(detailsContent).getPropertyValue('--animation-duration')) * 1000
-
-		if (!currentDetails.hasAttribute('open')) {
-			currentDetails.setAttribute('open', '')
-		} else {
-			currentDetails.classList.add('--closing')
-
-			setTimeout(() => {
-				currentDetails.classList.remove('--closing')
-				currentDetails.removeAttribute('open')
-			}, animationDuration)
+	details.addEventListener('click', (e) => {
+		if (animationPlaying) {
+			e.preventDefault()
+			console.log('Prevented')
+			return
 		}
-	}
+
+		if (details.hasAttribute('open')) {
+			e.preventDefault()
+			detailsDropdowns[index].classList.add('--closing')
+		} else {
+			detailsDropdowns[index].classList.add('--opening')
+		}
+	})
+
+	detailsDropdowns[index].addEventListener('animationstart', (e) => {
+		animationPlaying = true
+	})
+
+	detailsDropdowns[index].addEventListener('animationend', (e) => {
+		if (detailsDropdowns[index].classList.contains('--closing')) {
+			detailsDropdowns[index].classList.remove('--closing')
+			details.removeAttribute('open')
+		} else if (detailsDropdowns[index].classList.contains('--opening')) {
+			detailsDropdowns[index].classList.remove('--opening')
+		}
+
+		animationPlaying = false
+	})
 })
