@@ -25,18 +25,30 @@ svg {
 	overflow: hidden;
 }
 
-%heading-2 {
-	font-family: var(--ff-secondary);
-	font-size: rem(36);
-
-	@media screen and (max-width: em(768)) {}
-
-	@media screen and (max-width: em(480)) {
-		font-size: rem(32);
+%button-actions {
+	@media (hover: hover) {
+		&:hover {
+			box-shadow: 0 0 rem(10) var(--clr-action);
+		}
 	}
 
-	@media screen and (max-width: em(375)) {
-		font-size: rem(24);
+	&:active {
+		transform: scale(0.98);
+	}
+}
+
+.outlined-element {
+	outline: rem(2) solid transparent;
+	outline-offset: rem(2);
+
+	&:focus-visible {
+		outline: rem(2) solid var(--clr-action, currentColor);
+	}
+
+	&_within {
+		&:focus-within {
+			outline: rem(2) solid var(--clr-action, currentColor);
+		}
 	}
 }
 
@@ -51,6 +63,8 @@ svg {
 
 	& input,
 	& textarea {
+		--clr-action: var(--clr-secondary);
+
 		padding: rem(15) rem(20);
 
 		border: rem(1) solid rgb(222, 222, 222);
@@ -63,6 +77,8 @@ svg {
 		color: var(--clr-text-dark);
 
 		font-style: normal;
+
+		transition: all var(--animation-duration);
 
 		&::placeholder {
 			color: var(--clr-text-dark-050);
@@ -86,4 +102,105 @@ svg {
 	// .site-form__submit-button
 
 	&__submit-button {}
+}
+
+.text-huge {
+	font-size: rem(64);
+	text-wrap: balance;
+
+	@media screen and (max-width: em(1200)) {
+		font-size: rem(54);
+	}
+
+	@media screen and (max-width: em(768)) {
+		font-size: rem(48);
+	}
+
+	@media screen and (max-width: em(480)) {
+		font-size: rem(36);
+	}
+}
+
+.text-big {
+	font-family: var(--ff-secondary);
+	font-size: rem(36);
+	text-wrap: balance;
+
+	@media screen and (max-width: em(768)) {
+		font-size: rem(32);
+	}
+
+	@media screen and (max-width: em(480)) {
+		font-size: rem(26);
+	}
+
+	@media screen and (max-width: em(375)) {
+		font-size: rem(22);
+	}
+}
+
+.site-link {
+	--clr-default: var(--clr-secondary);
+	--clr-action: var(--clr-primary);
+
+	&_highlighted {
+		--clr-default: var(--clr-primary);
+		--clr-action: var(--clr-secondary);
+	}
+
+	transition: all var(--animation-duration);
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--clr-action);
+		}
+	}
+
+	&:focus-visible {
+		color: var(--clr-action);
+	}
+
+	&:active {
+		text-shadow: 0 0 rem(2) var(--clr-action);
+	}
+}
+
+.button-big {
+	--clr-action: var(--clr-primary);
+
+	padding: rem(15) rem(10);
+	border-radius: rem(11);
+
+	background-color: var(--clr-primary);
+	background-image: url('@img/button-background.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	font-family: var(--ff-secondary);
+	font-size: rem(24);
+	text-align: center;
+	color: var(--clr-text-default);
+
+	text-shadow: rem(1) rem(2) 0 rgba(0, 0, 0, 0.25);
+
+	transition: all var(--animation-duration);
+
+	@extend %button-actions;
+}
+
+.button-small {
+	--clr-action: var(--clr-primary);
+
+	padding: rem(10) rem(30);
+	border-radius: rem(50);
+	background-color: var(--clr-primary);
+
+	font-weight: 700;
+	font-size: rem(18);
+	text-align: center;
+	color: var(--clr-text-default);
+
+	transition: all var(--animation-duration);
+
+	@extend %button-actions;
 }

@@ -13,6 +13,8 @@ pageTabs.forEach(tabs => {
 const swiper = new Swiper('.swiper', {
 	modules: [Navigation, Pagination, EffectCards],
 
+	a11y: true,
+
 	effect: 'cards',
 	grabCursor: true,
 
@@ -26,6 +28,8 @@ const swiper = new Swiper('.swiper', {
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
+		bulletElement: 'button',
+		bulletClass: 'swiper-pagination-bullet outlined-element',
 	},
 
 	// Navigation arrows

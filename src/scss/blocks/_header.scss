@@ -45,6 +45,8 @@
 
 	&__logo-link {
 		grid-row: 1 / -1;
+
+		transition: all var(--animation-duration);
 	}
 
 	// .header__logo-img

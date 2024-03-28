@@ -1,23 +1,49 @@
 @keyframes detailsOpening {
 	0% {
 		grid-template-rows: 0fr;
-		padding: 0 rem(32) 0 rem(32 + 25 + 16);
+		padding: 0 rem($containerPadding) 0 rem($containerPadding + 25 + 16);
 	}
 
 	100% {
 		grid-template-rows: 1fr;
-		padding: 0 rem(32) rem(25) rem(32 + 25 + 16);
+		padding: 0 rem($containerPadding) rem(25) rem($containerPadding + 25 + 16);
 	}
 }
 
 @keyframes detailsClosing {
 	0% {
 		grid-template-rows: 1fr;
-		padding: 0 rem(32) rem(25) rem(32 + 25 + 16);
+		padding: 0 rem($containerPadding) rem(25) rem($containerPadding + 25 + 16);
 	}
 
 	100% {
 		grid-template-rows: 0fr;
-		padding: 0 rem(32) 0 rem(32 + 25 + 16);
+		padding: 0 rem($containerPadding) 0 rem($containerPadding + 25 + 16);
+	}
+}
+
+@media screen and (max-width: em(675)) {
+	@keyframes detailsOpening {
+		0% {
+			grid-template-rows: 0fr;
+			padding: 0 rem($containerPadding) 0 rem($containerPadding + 15 + 16);
+		}
+
+		100% {
+			grid-template-rows: 1fr;
+			padding: 0 rem($containerPadding) rem(15) rem($containerPadding + 15 + 16);
+		}
+	}
+
+	@keyframes detailsClosing {
+		0% {
+			grid-template-rows: 1fr;
+			padding: 0 rem($containerPadding) rem(15) rem($containerPadding + 15 + 16);
+		}
+
+		100% {
+			grid-template-rows: 0fr;
+			padding: 0 rem($containerPadding) 0 rem($containerPadding + 15 + 16);
+		}
 	}
 }
