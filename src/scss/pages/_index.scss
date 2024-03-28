@@ -110,6 +110,20 @@
 			padding-block: 0 rem(30);
 		}
 	}
+
+	// .page__special-offer
+
+	&__special-offer {
+		padding-block: 0 rem(40);
+
+		@media screen and (max-width: em(992)) {
+			padding-block: 0 rem(35);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding-block: 0 rem(30);
+		}
+	}
 }
 
 // Hero section
@@ -345,7 +359,7 @@
 		text-align: center;
 		color: var(--clr-text-default);
 
-		text-shadow: rem(1) rem(2) 0 0 rgba(0, 0, 0, 0.25);
+		text-shadow: rem(1) rem(2) 0 rgba(0, 0, 0, 0.25);
 
 		@media screen and (max-width: em(1200)) {
 			font-size: rem(22);
@@ -865,7 +879,7 @@
 		text-align: center;
 		color: var(--clr-text-default);
 
-		text-shadow: rem(1) rem(2) 0 0 rgba(0, 0, 0, 0.25);
+		text-shadow: rem(1) rem(2) 0 rgba(0, 0, 0, 0.25);
 
 		@media screen and (max-width: em(1200)) {
 			font-size: rem(22);
@@ -1530,5 +1544,53 @@
 
 		border-radius: rem(20);
 		background-color: var(--clr-secondary);
+	}
+}
+
+// Special offer section
+
+.special-offer {
+
+	// .special-offer__container
+
+	&__container {
+		grid-column: content-start / content-end;
+
+		display: grid;
+		justify-items: center;
+		gap: rem(15);
+	}
+
+	// .special-offer__title
+
+	&__title {
+		@extend %heading-2;
+		text-align: center;
+		text-wrap: balance;
+		color: var(--clr-text-highlighted);
+	}
+
+	// .special-offer__order-button
+
+	&__order-button {
+		border-radius: rem(11);
+		min-width: rem(295);
+		min-height: rem(90);
+
+		background: var(--clr-primary);
+		background-image: url('@img/button-background.png');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+
+		font-family: var(--ff-secondary);
+		font-size: rem(24);
+		text-align: center;
+		color: #f1f1f1;
+
+		text-shadow: rem(1) rem(2) 0 rgba(0, 0, 0, 0.25);
+
+		@media screen and (max-width: em(375)) {
+			min-width: 100%;
+		}
 	}
 }
