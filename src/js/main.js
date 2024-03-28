@@ -111,16 +111,21 @@
 
 const activatableElements = Array.from(document.querySelectorAll('button, a'))
 
-document.documentElement.addEventListener('touchstart', handleElementActivation)
-document.documentElement.addEventListener('touchend', handleElementActivation)
+document.documentElement.addEventListener('pointerdown', handleElementActivation)
+document.documentElement.addEventListener('pointerup', handleElementActivation)
+document.documentElement.addEventListener('pointerout', handleElementActivation)
 
 function handleElementActivation(e) {
 	const activatableElement = e.target.closest('button, a')
 
+	if (e.type === 'pointerout') {
+		activatableElement.classList.remove('--active')
+	}
+
 	if (activatableElements.includes(activatableElement)) {
-		if (e.type === 'touchstart') {
+		if (e.type === 'pointerdown') {
 			activatableElement.classList.add('--active')
-		} else if (e.type === 'touchend') {
+		} else if (e.type === 'pointerup') {
 			activatableElement.classList.remove('--active')
 		}
 	}
