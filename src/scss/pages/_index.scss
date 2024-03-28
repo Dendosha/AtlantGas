@@ -96,6 +96,20 @@
 			padding-block: rem(30);
 		}
 	}
+
+	// .page__partners
+
+	&__partners {
+		padding-block: 0 rem(40);
+
+		@media screen and (max-width: em(992)) {
+			padding-block: 0 rem(35);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding-block: 0 rem(30);
+		}
+	}
 }
 
 // Hero section
@@ -1485,5 +1499,36 @@
 				font-size: rem(14);
 			}
 		}
+	}
+}
+
+// Partners section
+
+.partners {
+
+	// .partners__container
+
+	&__container {
+		grid-column: content-start / content-end;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(170), 1fr));
+		grid-auto-rows: 1fr;
+		gap: rem(16);
+
+		justify-content: center;
+	}
+
+	// .partners__partner-link
+
+	&__partner-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		padding: rem(8) rem(10);
+
+		border-radius: rem(20);
+		background-color: var(--clr-secondary);
 	}
 }
