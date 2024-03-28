@@ -32,7 +32,7 @@ svg {
 		}
 	}
 
-	&:active {
+	&.--active {
 		transform: scale(0.98);
 	}
 }
@@ -45,8 +45,8 @@ svg {
 		outline: rem(2) solid var(--clr-action, currentColor);
 	}
 
-	&_within {
-		&:focus-within {
+	&_within-visible {
+		&:has(>*:focus-visible) {
 			outline: rem(2) solid var(--clr-action, currentColor);
 		}
 	}

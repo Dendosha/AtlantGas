@@ -1554,15 +1554,7 @@
 
 		transition: all var(--animation-duration);
 
-		@media (hover: hover) {
-			&:hover {
-				box-shadow: 0 0 rem(10) var(--clr-action);
-			}
-		}
-
-		&:active {
-			transform: scale(0.98);
-		}
+		@extend %button-actions;
 	}
 }
 

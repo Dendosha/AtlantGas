@@ -109,6 +109,25 @@
 
 
 
+const activatableElements = Array.from(document.querySelectorAll('button, a'))
+
+document.documentElement.addEventListener('touchstart', handleElementActivation)
+document.documentElement.addEventListener('touchend', handleElementActivation)
+
+function handleElementActivation(e) {
+	const activatableElement = e.target.closest('button, a')
+
+	if (activatableElements.includes(activatableElement)) {
+		if (e.type === 'touchstart') {
+			activatableElement.classList.add('--active')
+		} else if (e.type === 'touchend') {
+			activatableElement.classList.remove('--active')
+		}
+	}
+}
+
+
+
 // Header script
 import "./blocks/header.js"
 
