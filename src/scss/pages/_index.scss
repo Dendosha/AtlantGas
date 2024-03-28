@@ -32,9 +32,13 @@
 	// .page__advantages
 
 	&__advantages {
+		--margin-top: 18rem;
+
 		padding-block-start: rem(60);
 
 		@media screen and (max-width: em(480)) {
+			--margin-top: 15rem;
+
 			padding-block-start: rem(40);
 		}
 	}
@@ -541,6 +545,8 @@
 			}
 		}
 
+		@extend %button-actions;
+
 		@media screen and (max-width: em(768)) {
 			bottom: rem(-75);
 		}
@@ -652,6 +658,8 @@
 	// .advantages__title
 
 	&__title {
+		scroll-margin-top: calc(var(--margin-top) / 16);
+
 		grid-column: 1 / -1;
 		text-align: center;
 

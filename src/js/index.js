@@ -3,6 +3,7 @@ import Tabs from "./libs/a11y-tabs/a11yTabs.js"
 import Swiper from 'swiper'
 import { Navigation, Pagination, EffectCards } from 'swiper/modules'
 
+// Tabs
 const pageTabs = document.querySelectorAll('[data-tabs="tabs"]')
 pageTabs.forEach(tabs => {
 	new Tabs(tabs, {
@@ -10,10 +11,17 @@ pageTabs.forEach(tabs => {
 	})
 })
 
+// Slider
 const swiper = new Swiper('.swiper', {
 	modules: [Navigation, Pagination, EffectCards],
 
-	a11y: true,
+	a11y: {
+		prevSlideMessage: 'Предыдущий слайд',
+		nextSlideMessage: 'Следующий слайд',
+		firstSlideMessage: 'Это первый слайд',
+		lastSlideMessage: 'Это последний слайд',
+		paginationBulletMessage: 'Переключить на слайд {{index}}',
+	},
 
 	effect: 'cards',
 	grabCursor: true,
@@ -39,6 +47,7 @@ const swiper = new Swiper('.swiper', {
 	},
 })
 
+// Accordion
 const pageDetails = document.querySelectorAll('.faq__question-block')
 const detailsDropdowns = document.querySelectorAll('.faq__answer')
 
@@ -74,4 +83,12 @@ pageDetails.forEach((details, index) => {
 
 		animationPlaying = false
 	})
+})
+
+// Scrolldown button
+const scrolldownButton = document.querySelector('[data-scrolldown]')
+const elementToScroll = document.getElementById(scrolldownButton.getAttribute('data-scrolldown'))
+
+scrolldownButton.addEventListener('click', (e) => {
+	elementToScroll.scrollIntoView(true)
 })
