@@ -17,8 +17,12 @@
 	// Text colors
 	--clr-text-default: var(--clr-secondary);
 	--clr-text-default-070: var(--clr-secondary-070);
+
 	--clr-text-highlighted: var(--clr-primary);
-	--clr-text-testimonial: rgb(45, 45, 45);
+
+	--clr-text-dark: rgb(45, 45, 45);
+	--clr-text-dark-050: rgb(45, 45, 45, 0.5);
+
 	--clr-text-map: rgb(27, 38, 57);
 
 	// Fonts
