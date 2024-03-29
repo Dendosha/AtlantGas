@@ -115,7 +115,7 @@ class ModalWindow {
 
 		this.element.dataset.state = this.options.state = 'closed'
 		this.element.setAttribute('aria-hidden', true)
-		this.lastFocusedOpener?.focus()
+		this.lastFocusedOpener?.focus();
 
 		if (this.options.closeCallback) {
 			this.options.closeCallback[0](...this.options.closeCallback.slice(1))

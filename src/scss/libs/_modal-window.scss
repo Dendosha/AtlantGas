@@ -1,0 +1,50 @@
+.--modal-window {
+	--backdrop-color: rgba(0, 0, 0, 0.5);
+
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	z-index: 100;
+
+	display: grid;
+
+	padding-block: rem(20);
+
+	background-color: var(--backdrop-color);
+
+	&[data-state="opened"] {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s, visibility 0s;
+	}
+
+	&[data-state="closed"] {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s, visibility 0.3s;
+	}
+
+	// .--modal-window__wrapper
+
+	&__wrapper {
+		display: grid;
+		align-items: center;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	// .--modal-window__dialog
+
+	&__dialog {
+		margin-inline: auto;
+	}
+
+	// .--modal-window__close-modal-button
+
+	&__close-modal-button {}
+
+	// .--modal-window__title
+
+	&__title {}
+}

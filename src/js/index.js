@@ -3,14 +3,6 @@ import Tabs from "./libs/a11y-tabs/a11yTabs.js"
 import Swiper from 'swiper'
 import { Navigation, Pagination, EffectCards } from 'swiper/modules'
 
-// Tabs
-const pageTabs = document.querySelectorAll('[data-tabs="tabs"]')
-pageTabs.forEach(tabs => {
-	new Tabs(tabs, {
-
-	})
-})
-
 // Slider
 const swiper = new Swiper('.swiper', {
 	modules: [Navigation, Pagination, EffectCards],

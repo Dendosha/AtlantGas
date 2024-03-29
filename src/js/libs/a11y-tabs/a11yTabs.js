@@ -3,6 +3,7 @@ class Tabs {
 		activation: 'auto', // auto | manual
 		prevKey: 'ArrowLeft',
 		nextKey: 'ArrowRight',
+		openTabCallback: null,
 	}
 
 	constructor(element, options) {
@@ -133,6 +134,8 @@ class Tabs {
 
 		this.currentTab = newTab
 		this.currentTabpanel = newTabPanel
+
+		if (this.options.openTabCallback) this.options.openTabCallback()
 	}
 }
 

@@ -190,7 +190,10 @@ class SelectList {
 				this.#html.listbox.scrollTop = this.#html.listbox.scrollHeight
 				break
 			case 'Escape':
-				if (this.isOpened) this.close()
+				if (this.isOpened) {
+					e.stopPropagation()
+					this.close()
+				}
 				break
 		}
 	}
@@ -235,7 +238,7 @@ class SelectList {
 		this.#html.listbox.querySelector('li[aria-selected="true"]')?.setAttribute('aria-selected', false)
 		selectedItem.setAttribute('aria-selected', true)
 
-		this.#html.input.value = this.#html.combobox.innerText = selectedItem.innerText
+		this.#html.input.value = this.#html.combobox.innerText = selectedItem.textContent
 
 		if (selectedItem.offsetTop + selectedItem.offsetHeight > this.#html.listbox.clientHeight + this.#html.listbox.scrollTop) {
 			selectedItem.scrollIntoView({ block: 'end', behavior: "smooth" })

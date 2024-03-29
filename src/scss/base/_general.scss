@@ -25,6 +25,54 @@ svg {
 	overflow: hidden;
 }
 
+.site-form {
+	display: grid;
+	grid-auto-rows: min-content;
+	gap: rem(25);
+
+	@media screen and (max-width: em(768)) {
+		gap: rem(15);
+	}
+
+	& input,
+	& textarea {
+		padding: rem(15) rem(20);
+
+		border: rem(1) solid rgb(222, 222, 222);
+		border-radius: rem(10);
+		box-shadow: inset 0 0 rem(4) 0 rgba(0, 0, 0, 0.25);
+		background: #fff;
+
+		font-size: rem(12);
+		text-transform: uppercase;
+		color: var(--clr-text-dark);
+
+		transition: color var(--animation-duration), outline var(--animation-duration);
+
+		&::placeholder {
+			color: var(--clr-text-dark-050);
+		}
+
+		@media screen and (max-width: em(768)) {
+			padding: rem(10) rem(15);
+		}
+	}
+
+	// .site-form__text-input
+
+	&__text-input {}
+
+	// .site-form__textarea
+
+	&__textarea {
+		min-height: rem(115);
+	}
+
+	// .site-form__submit-button
+
+	&__submit-button {}
+}
+
 %button-actions {
 	@media (hover: hover) {
 		&:hover {
@@ -50,58 +98,6 @@ svg {
 			outline: rem(2) solid var(--clr-action, currentColor);
 		}
 	}
-}
-
-.site-form {
-	display: grid;
-	grid-auto-rows: min-content;
-	gap: rem(25);
-
-	@media screen and (max-width: em(768)) {
-		gap: rem(15);
-	}
-
-	& input,
-	& textarea {
-		--clr-action: var(--clr-secondary);
-
-		padding: rem(15) rem(20);
-
-		border: rem(1) solid rgb(222, 222, 222);
-		border-radius: rem(10);
-		box-shadow: inset 0 0 rem(4) 0 rgba(0, 0, 0, 0.25);
-		background: #fff;
-
-		font-size: rem(12);
-		text-transform: uppercase;
-		color: var(--clr-text-dark);
-
-		font-style: normal;
-
-		transition: all var(--animation-duration);
-
-		&::placeholder {
-			color: var(--clr-text-dark-050);
-		}
-
-		@media screen and (max-width: em(768)) {
-			padding: rem(10) rem(15);
-		}
-	}
-
-	// .site-form__text-input
-
-	&__text-input {}
-
-	// .site-form__textarea
-
-	&__textarea {
-		min-height: rem(115);
-	}
-
-	// .site-form__submit-button
-
-	&__submit-button {}
 }
 
 .text-huge {
@@ -136,6 +132,20 @@ svg {
 
 	@media screen and (max-width: em(375)) {
 		font-size: rem(22);
+	}
+}
+
+.text-medium {
+	font-family: var(--ff-secondary);
+	font-size: rem(24);
+	text-wrap: balance;
+
+	@media screen and (max-width: em(768)) {
+		font-size: rem(20);
+	}
+
+	@media screen and (max-width: em(375)) {
+		font-size: rem(18);
 	}
 }
 

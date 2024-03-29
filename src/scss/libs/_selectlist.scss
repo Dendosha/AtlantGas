@@ -1,34 +1,21 @@
 .--selectlist {
 	--selectlist-accent-color: #fff;
-	--selectlist-active-color: #c5c5c5;
+	--selectlist-active-color: var(--clr-primary);
 
-	--selected-option-color: #969696;
-	--hover-option-color: #c5c5c5;
+	--selected-option-color: rgb(87, 173, 253);
+	--hover-option-color: rgb(134, 190, 243);
 
 	--scrollbar-track-color: #fff;
 	--scrollbar-thumb-color: #000;
 
+	--border-color: rgb(222, 222, 222);
+
 	position: relative;
 
 	display: inline-grid;
-	width: rem(300);
 
-	border-radius: rem(10);
-	box-shadow: 0 0 rem(10) transparent;
-	transition: box-shadow 0.3s ease-in-out;
-
-	color: #000;
-	font-size: rem(20);
-
-	@media (any-hover: hover) {
-		&:hover {
-			box-shadow: 0 0 rem(10) var(--selectlist-accent-color);
-		}
-	}
-
-	&:focus-within {
-		box-shadow: 0 0 rem(10) var(--selectlist-accent-color);
-	}
+	font-size: rem(12);
+	color: var(--clr-text-dark);
 
 	// .--selectlist__combobox
 
@@ -41,37 +28,63 @@
 
 		display: flex;
 		align-items: center;
-		padding: rem(10) rem(40) rem(10) rem(10);
-		border-radius: rem(5);
+
+		min-width: rem(400);
+
+		padding: rem(15) rem(20);
+
+		border: rem(1) solid var(--border-color);
+		border-radius: rem(10);
+		box-shadow: inset 0 0 rem(4) 0 rgba(0, 0, 0, 0.25);
+		background: #fff;
+
+		outline: rem(2) solid transparent;
+		outline-offset: rem(2);
+
+		transition: color var(--animation-duration), outline var(--animation-duration);
+
+		@media screen and (max-width: em(768)) {
+			padding: rem(10) rem(15);
+		}
 
 		background-color: var(--selectlist-accent-color);
 
-		transition: border-radius 0.1s ease 0.22s, background-color 0.3s ease;
+		transition: border-radius 0.1s ease 0.22s,
+		background-color 0.3s ease;
+
+		&:focus-visible {
+			outline: rem(2) solid var(--selectlist-active-color);
+		}
 
 		&::after {
 			content: '';
 			position: absolute;
 			right: rem(10);
 
-			border: rem(10) solid transparent;
-			border-top: rem(10) solid currentColor;
-			border-bottom: 0;
+			width: rem(16);
+			height: rem(16);
+
+			background-image: url('@img/icons/arrow.svg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+
+			transform: rotate(90deg);
 
 			transition: transform 0.3s ease;
 		}
 
 		&[aria-expanded="true"] {
-			background-color: var(--selectlist-active-color);
-
 			transition: border-radius 0s ease, background-color 0.3s ease;
 
 			&::after {
-				transform: scale(1, -1);
+				transform: rotate(-90deg);
 			}
 
 			&~.--selectlist__listbox-wrapper {
 				grid-template-rows: 1fr;
 				top: calc(100% + rem(10));
+
+				border: rem(2) solid var(--border-color);
 			}
 		}
 	}
@@ -81,6 +94,10 @@
 	&__listbox-wrapper {
 		position: absolute;
 		top: 100%;
+
+		border: rem(2) solid transparent;
+		border-radius: rem(10);
+		overflow: hidden;
 
 		display: grid;
 		grid-template-rows: 0fr;
@@ -122,12 +139,12 @@
 		position: relative;
 
 		background-color: var(--selectlist-accent-color);
-		padding: rem(10) rem(40) rem(10) rem(10);
+		padding: rem(10) rem(40) rem(10) rem(20);
 
 		transition: background-color 0.3s ease;
 
 		&:not(:last-child) {
-			border-bottom: rem(2) solid #000;
+			border-bottom: rem(2) solid var(--border-color);
 		}
 
 		&[aria-selected="true"] {

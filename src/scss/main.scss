@@ -25,7 +25,10 @@
 // General styles
 @import "./base/general";
 
+// Libs
 @import "./libs/swiper";
+@import "./libs/modal-window";
+@import "./libs/selectlist";
 
 // Animations
 @import "./animations";
@@ -48,6 +51,10 @@ html {
 
 	scroll-behavior: smooth;
 	scroll-padding-top: initial;
+
+	caret-color: var(--clr-primary);
+
+	scrollbar-gutter: stable;
 }
 
 body {

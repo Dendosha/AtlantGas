@@ -609,17 +609,7 @@
 	// .gas-text-block__subtitle
 
 	&__subtitle {
-		font-size: rem(24);
-		text-wrap: balance;
 		color: var(--clr-text-highlighted);
-
-		@media screen and (max-width: em(768)) {
-			font-size: rem(20);
-		}
-
-		@media screen and (max-width: em(375)) {
-			font-size: rem(18);
-		}
 	}
 
 	// .gas-text-block__text
@@ -716,17 +706,10 @@
 	// .advantages__advantage-title
 
 	&__advantage-title {
-		font-family: var(--ff-secondary);
-		font-size: rem(24);
-		text-wrap: pretty;
 		color: var(--clr-text-highlighted);
 
 		&:not(:last-child) {
 			margin-bottom: rem(15);
-		}
-
-		@media screen and (max-width: em(375)) {
-			font-size: rem(20);
 		}
 	}
 
@@ -1118,8 +1101,6 @@
 	// .testimonials__user-name
 
 	&__user-name {
-		font-family: var(--ff-secondary);
-		font-size: rem(24);
 		color: var(--clr-text-highlighted);
 
 		&:not(:last-child) {
@@ -1446,6 +1427,7 @@
 	// .feedback__form
 
 	&__form {
+		--clr-action: var(--clr-primary);
 		grid-area: form;
 
 		grid-auto-columns: minmax(auto, rem(400));

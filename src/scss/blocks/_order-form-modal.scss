@@ -1,0 +1,86 @@
+.order-form-modal {
+	--clr-action: var(--clr-primary);
+
+	// .order-form-modal__wrapper
+
+	&__wrapper {}
+
+	// .order-form-modal__dialog
+
+	&__dialog {
+		display: grid;
+		grid-template-areas: 'title close-button' 'form form';
+		gap: rem(30);
+
+		padding: rem(30) rem(30) rem(40);
+		border-radius: rem(35);
+		box-shadow: 0 0 rem(20) 0 rgba(0, 0, 0, 0.25);
+		background-color: #fff;
+	}
+
+	// .order-form-modal__text
+
+	&__text {
+		grid-area: title;
+
+		max-width: rem(210);
+
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--clr-text-highlighted);
+	}
+
+	// .order-form-modal__close-modal-button
+
+	&__close-modal-button {
+		grid-area: close-button;
+		justify-self: end;
+
+		width: rem(32);
+		height: rem(32);
+		padding: rem(4);
+
+		border-radius: rem(4);
+
+		background-color: transparent;
+
+		@media (hover: hover) {
+			&:hover>svg {
+				--clr-svg-primary: #000;
+			}
+		}
+
+		&.--active {
+			transform: scale(0.95);
+		}
+	}
+
+	// .order-form-modal__form
+
+	&__form {
+		grid-area: form;
+
+		&>input,
+		&>textarea {
+			min-width: rem(400);
+			min-height: rem(50);
+		}
+
+		&>button {
+			justify-self: center;
+
+			min-width: rem(360);
+			min-height: rem(90);
+		}
+	}
+
+	// .order-form-modal__selectlist-wrapper
+
+	&__selectlist-wrapper {}
+
+	// .order-form-modal__selectlist
+
+	&__selectlist {
+		min-height: rem(50);
+	}
+}
