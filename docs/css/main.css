@@ -41,18 +41,18 @@
 }
 
 @font-face {
-  font-family: RussoOne;
-  font-display: swap;
-  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RussoOne;
+  font-display: swap;
+  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -416,6 +416,7 @@ svg {
   align-items: center;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 1.25rem;
 }
 
 .--modal-window__dialog {
@@ -434,6 +435,7 @@ svg {
   display: inline-grid;
   font-size: 0.75rem;
   color: var(--clr-text-dark);
+  min-width: 100%;
 }
 
 .--selectlist__combobox {
@@ -445,7 +447,6 @@ svg {
           user-select: none;
   display: flex;
   align-items: center;
-  min-width: 25rem;
   padding: 0.9375rem 1.25rem;
   border: 0.0625rem solid var(--border-color);
   border-radius: 0.625rem;
@@ -1965,6 +1966,22 @@ body.--burger-menu-opened {
     font-size: 0.875rem;
   }
 
+  .order-form-modal__dialog {
+    padding: 1.5625rem;
+    border-radius: 1.875rem;
+  }
+
+  .order-form-modal__form > input,
+  .order-form-modal__form > textarea {
+    min-width: 20rem;
+  }
+
+  .order-form-modal__form > button {
+    min-width: 20rem;
+    min-height: 5rem;
+    font-size: 1.25rem;
+  }
+
   .prices__container {
     grid-template-columns: 1fr;
   }
@@ -2116,6 +2133,21 @@ body.--burger-menu-opened {
   .header__logo-img_mobile {
     display: revert;
     max-height: 3.125rem;
+  }
+
+  .order-form-modal__dialog {
+    padding: 1.25rem;
+    border-radius: 0.9375rem;
+  }
+
+  .order-form-modal__form > input,
+  .order-form-modal__form > textarea {
+    min-width: 100%;
+  }
+
+  .order-form-modal__form > button {
+    min-width: 100%;
+    font-size: 1.125rem;
   }
 
   .page__prices {
