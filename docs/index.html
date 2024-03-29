@@ -13,10 +13,10 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 
-	<link rel="stylesheet" href="css/main.min.css?_v=20240329011216">
-	<script defer src="js/main.min.js?_v=20240329011216"></script>
+	<link rel="stylesheet" href="css/main.min.css?_v=20240329051426">
+	<script defer src="js/main.min.js?_v=20240329051426"></script>
 	
-	<script defer src="js/index.min.js?_v=20240329011216"></script>
+	<script defer src="js/index.min.js?_v=20240329051426"></script>
 	
 </head>
 
@@ -224,7 +224,8 @@
 							<p class="hero__subtitle">в любую точку Москвы и Московской области</p>
 						</hgroup>
 						<div class="hero__order">
-							<button type="button" class="hero__order-button button-big button-big_wide outlined-element">Заказать
+							<button type="button" data-modal-open="indexPage-order-form-modal"
+								class="hero__order-button button-big button-big_wide outlined-element">Заказать
 								доставку газа
 								в&nbspгазгольдер</button>
 							<p class="hero__order-text">Доставка газа всегда по актуальным ценам</p>
@@ -241,13 +242,14 @@
 					<div class="prices__gas-text-block gas-text-block">
 						<hgroup class="gas-text-block__hgroup">
 							<h3 class="gas-text-block__title text-big">Пропан</h3>
-							<p class="gas-text-block__subtitle">от 25 рублей за литр</p>
+							<p class="gas-text-block__subtitle text-medium">от 25 рублей за литр</p>
 						</hgroup>
 						<p class="gas-text-block__text">
 							Физически испарение происходит до -40 градусов, что позволяет использовать его в наших с вами погодных
 							условиях
 						</p>
-						<button type="button" class="gas-text-block__order-button button-small outlined-element">Заказать</button>
+						<button type="button" data-modal-open="indexPage-order-form-modal"
+							class="gas-text-block__order-button button-small outlined-element">Заказать</button>
 					</div>
 
 					<div class="prices__gas-proportions">
@@ -271,27 +273,29 @@
 					<div class="prices__gas-text-block gas-text-block">
 						<hgroup class="gas-text-block__hgroup">
 							<h3 class="gas-text-block__title text-big">Бутан</h3>
-							<p class="gas-text-block__subtitle">от 16 рублей за литр</p>
+							<p class="gas-text-block__subtitle text-medium">от 16 рублей за литр</p>
 						</hgroup>
 						<p class="gas-text-block__text">
 							Испарение Бутана происходит только до 0 градусов и годится для использования в тёплое время года
 						</p>
-						<button type="button" class="gas-text-block__order-button button-small outlined-element">Заказать</button>
+						<button type="button" data-modal-open="indexPage-order-form-modal"
+							class="gas-text-block__order-button button-small outlined-element">Заказать</button>
 					</div>
 
-					<button type="button" class="prices__scrolldown-button outlined-element"></button>
+					<button data-scrolldown="advantages-title" type="button"
+						class="prices__scrolldown-button outlined-element"></button>
 				</div>
 			</section>
 			<section class="page__advantages advantages --grid-content">
 				<div class="advantages__container">
-					<h2 class="advantages__title text-big">Преимущества работы с нашей компанией</h2>
+					<h2 id="advantages-title" class="advantages__title text-big">Преимущества работы с нашей компанией</h2>
 					<div class="advantages__advantages-list">
 
 						<div class="advantages__advantage">
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/storage-economy.png" alt="Экономия на хранилище">
 							</div>
-							<h3 class="advantages__advantage-title">Экономия на хранилище</h3>
+							<h3 class="advantages__advantage-title text-medium">Экономия на хранилище</h3>
 							<p class="advantages__advantage-text">
 								за счёт собственных цистерн на нашей базе
 							</p>
@@ -301,7 +305,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/transport-economy.png" alt="Экономия на транспорте">
 							</div>
-							<h3 class="advantages__advantage-title">Экономия на транспорте</h3>
+							<h3 class="advantages__advantage-title text-medium">Экономия на транспорте</h3>
 							<p class="advantages__advantage-text">
 								более 10 собственных газовозов
 							</p>
@@ -311,7 +315,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/direct-deliveries.png" alt="Прямые поставки газа">
 							</div>
-							<h3 class="advantages__advantage-title">Поставки напрямую от производителей</h3>
+							<h3 class="advantages__advantage-title text-medium">Поставки напрямую от производителей</h3>
 							<p class="advantages__advantage-text">
 								нет наценки на стоимость газа как у перекупщиков и небольших частных компаний
 							</p>
@@ -321,7 +325,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/gas-volumes.png" alt="Объемы газа">
 							</div>
-							<h3 class="advantages__advantage-title">Любые объёмы поставки качественного газа</h3>
+							<h3 class="advantages__advantage-title text-medium">Любые объёмы поставки качественного газа</h3>
 							<p class="advantages__advantage-text">
 								вы получаете объем от 1 тонны до 20 тонн, с сертификатом качества газа
 							</p>
@@ -331,7 +335,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/payment-ways.png" alt="Способы оплаты">
 							</div>
-							<h3 class="advantages__advantage-title">Оплата удобным для вас способом</h3>
+							<h3 class="advantages__advantage-title text-medium">Оплата удобным для вас способом</h3>
 							<p class="advantages__advantage-text">
 								все газовозы оснащены терминалами для оплаты вашего заказа
 							</p>
@@ -341,7 +345,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/clean-gas.png" alt="Чистый газ">
 							</div>
-							<h3 class="advantages__advantage-title">Чистый газ без примесей</h3>
+							<h3 class="advantages__advantage-title text-medium">Чистый газ без примесей</h3>
 							<p class="advantages__advantage-text">
 								перед отправкой газ проходит множество этапов очистки от примесей
 							</p>
@@ -351,7 +355,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/hoses-length.png" alt="Длина заправочных рукавов">
 							</div>
-							<h3 class="advantages__advantage-title">Длина заправочных рукавов — 50 метров</h3>
+							<h3 class="advantages__advantage-title text-medium">Длина заправочных рукавов — 50 метров</h3>
 							<p class="advantages__advantage-text">
 								не требуется подъезд автомобиля вплотную к резервуару
 							</p>
@@ -361,7 +365,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/24-7-delivery.png" alt="Круглосуточная доставка">
 							</div>
-							<h3 class="advantages__advantage-title">Доставка сжиженного газа в формате 24/7</h3>
+							<h3 class="advantages__advantage-title text-medium">Доставка сжиженного газа в формате 24/7</h3>
 							<p class="advantages__advantage-text">
 								привезем газ в удобное для вас время или же по графику
 							</p>
@@ -371,7 +375,7 @@
 							<div class="advantages__advantage-img">
 								<img src="img/sections/advantages/certified-staff.png" alt="Аттестованный персонал">
 							</div>
-							<h3 class="advantages__advantage-title">Аттестованный персонал</h3>
+							<h3 class="advantages__advantage-title text-medium">Аттестованный персонал</h3>
 							<p class="advantages__advantage-text">
 								квалифицированные сотрудники проведут полную консультацию и дадут рекомендации, если такие нужны будут
 							</p>
@@ -442,7 +446,8 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="gas-volumes__order-button button-big outlined-element">Заказать газ</button>
+					<button type="button" data-modal-open="indexPage-order-form-modal"
+						class="gas-volumes__order-button button-big outlined-element">Заказать газ</button>
 				</div>
 			</section>
 			<section class="page__testimonials testimonials --grid-content">
@@ -457,7 +462,7 @@
 										<img src="img/sections/testimonials/1.png" alt="Фото пользователя">
 									</picture>
 								</div>
-								<p class="testimonials__user-name">Ольга И.</p>
+								<p class="testimonials__user-name text-medium">Ольга И.</p>
 								<p class="testimonials__user-location">Красногорск</p>
 								<p class="testimonials__user-testimonial">
 									Я всегда боюсь газа , а особенно боюсь что он может взорваться, как же мне помог Андрей
@@ -473,7 +478,7 @@
 										<img src="img/sections/testimonials/2.png" alt="Фото пользователя">
 									</picture>
 								</div>
-								<p class="testimonials__user-name">Сергей В.</p>
+								<p class="testimonials__user-name text-medium">Сергей В.</p>
 								<p class="testimonials__user-location">Мытищи</p>
 								<p class="testimonials__user-testimonial">
 									Боялся что машина не сможет доехать до моего дома из-за разбитой дороги осенью и то что попортит ещё
@@ -489,7 +494,7 @@
 										<img src="img/sections/testimonials/3.png" alt="Фото пользователя">
 									</picture>
 								</div>
-								<p class="testimonials__user-name">Екатерина У.</p>
+								<p class="testimonials__user-name text-medium">Екатерина У.</p>
 								<p class="testimonials__user-location">Зеленоград</p>
 								<p class="testimonials__user-testimonial">
 									Были в отпуске с мужем и совсем забыли, о том что необходимо было заправиться, нашли только одну
@@ -505,7 +510,7 @@
 										<img src="img/sections/testimonials/4.png" alt="Фото пользователя">
 									</picture>
 								</div>
-								<p class="testimonials__user-name">Евгений С.</p>
+								<p class="testimonials__user-name text-medium">Евгений С.</p>
 								<p class="testimonials__user-location">Орехово-Зуево</p>
 								<p class="testimonials__user-testimonial">
 									Заправился и получил бесплатное обслуживание оборудования и поставили телеметрию. Валера лучший
@@ -525,7 +530,7 @@
 				<div class="faq__container">
 					<h2 class="faq__title text-big">Ответы на часто задаваемые вопросы</h2>
 					<div class="faq__accordion">
-						<details class="faq__question-block outlined-element outlined-element_within">
+						<details class="faq__question-block outlined-element outlined-element_within-visible">
 							<summary class="faq__question">
 								<svg class="faq__question-icon">
 									<use href="#symbol-arrow"></use>
@@ -539,7 +544,7 @@
 							</div>
 						</details>
 
-						<details class="faq__question-block outlined-element outlined-element_within">
+						<details class="faq__question-block outlined-element outlined-element_within-visible">
 							<summary class="faq__question">
 								<svg class="faq__question-icon">
 									<use href="#symbol-arrow"></use>
@@ -553,7 +558,7 @@
 							</div>
 						</details>
 
-						<details class="faq__question-block outlined-element outlined-element_within">
+						<details class="faq__question-block outlined-element outlined-element_within-visible">
 							<summary class="faq__question">
 								<svg class="faq__question-icon">
 									<use href="#symbol-arrow"></use>
@@ -567,7 +572,7 @@
 							</div>
 						</details>
 
-						<details class="faq__question-block outlined-element outlined-element_within">
+						<details class="faq__question-block outlined-element outlined-element_within-visible">
 							<summary class="faq__question">
 								<svg class="faq__question-icon">
 									<use href="#symbol-arrow"></use>
@@ -582,7 +587,7 @@
 							</div>
 						</details>
 
-						<details class="faq__question-block outlined-element outlined-element_within">
+						<details class="faq__question-block outlined-element outlined-element_within-visible">
 							<summary class="faq__question">
 								<svg class="faq__question-icon">
 									<use href="#symbol-arrow"></use>
@@ -642,7 +647,8 @@
 			<section class="page__special-offer special-offer --grid-content">
 				<div class="special-offer__container">
 					<h2 class="special-offer__title text-big">Закажи прямо сейчас и получи бесплатную установку телеметрии</h2>
-					<button type="button" class="special-offer__order-button button-big outlined-element">Заказать газ</button>
+					<button type="button" data-modal-open="indexPage-order-form-modal"
+						class="special-offer__order-button button-big outlined-element">Заказать газ</button>
 				</div>
 			</section>
 		</main>
@@ -679,6 +685,35 @@
 		</div>
 	</section>
 </footer>
+		<div id="indexPage-order-form-modal" data-custom-element="dialog" data-state="closed" aria-hidden="true"
+	class="order-form-modal --modal-window">
+	<div class="order-form-modal__wrapper --modal-window__wrapper">
+		<div role="dialog" aria-modal="true" class="order-form-modal__dialog --modal-window__dialog">
+			<p class="order-form-modal__text text-medium">Доставим газ за 4 часа</p>
+			<button type="button" data-close-button
+				class="order-form-modal__close-modal-button --modal-window__close-modal-button outlined-element">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M23 1L12.25 11.75M1.5 22.5L12.25 11.75M12.25 11.75L1.5 1L23 22.5"
+						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<form action="#" class="order-form-modal__form site-form">
+				<input type="text" name="name" placeholder="Имя" class="site-form__text-input outlined-element">
+				<input type="text" name="phone" placeholder="Телефон" class="site-form__text-input outlined-element">
+				<div class="order-form-modal__selectlist-wrapper">
+					<div id="order-form-selectlist" data-custom-element="selectlist" data-placeholder="Выберите объём газа"
+						aria-label="Выпадающий список выбора объёма газа" data-listbox-id="order-form-selectlist"
+						data-selected-item-index="-1"
+						data-selectlist-items="Малый 2000 л.; Средний 6000 л.; Стандартный 10 000 л.; Оптовый 40 000 л."
+						class="order-form-modal__selectlist --selectlist">
+					</div>
+				</div>
+				<button type="submit" class="site-form__submit-button button-big outlined-element">Заказать доставку
+					газа</button>
+			</form>
+		</div>
+	</div>
+</div>
 	</div>
 </body>
 
