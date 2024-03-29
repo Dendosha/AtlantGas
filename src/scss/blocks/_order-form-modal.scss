@@ -16,6 +16,16 @@
 		border-radius: rem(35);
 		box-shadow: 0 0 rem(20) 0 rgba(0, 0, 0, 0.25);
 		background-color: #fff;
+
+		@media screen and (max-width: em(675)) {
+			padding: rem(25);
+			border-radius: rem(30);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding: rem(20);
+			border-radius: rem(15);
+		}
 	}
 
 	// .order-form-modal__text
@@ -64,6 +74,14 @@
 		&>textarea {
 			min-width: rem(400);
 			min-height: rem(50);
+
+			@media screen and (max-width: em(675)) {
+				min-width: rem(320);
+			}
+
+			@media screen and (max-width: em(480)) {
+				min-width: 100%;
+			}
 		}
 
 		&>button {
@@ -71,6 +89,19 @@
 
 			min-width: rem(360);
 			min-height: rem(90);
+
+			@media screen and (max-width: em(675)) {
+				min-width: rem(320);
+				min-height: rem(80);
+
+				font-size: rem(20);
+			}
+
+			@media screen and (max-width: em(480)) {
+				min-width: 100%;
+
+				font-size: rem(18);
+			}
 		}
 	}
 

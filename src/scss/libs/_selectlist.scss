@@ -17,6 +17,8 @@
 	font-size: rem(12);
 	color: var(--clr-text-dark);
 
+	min-width: 100%;
+
 	// .--selectlist__combobox
 
 	&__combobox {
@@ -28,8 +30,6 @@
 
 		display: flex;
 		align-items: center;
-
-		min-width: rem(400);
 
 		padding: rem(15) rem(20);
 
