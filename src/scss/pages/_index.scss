@@ -484,23 +484,28 @@
 		height: rem(65);
 		border-radius: rem(10);
 
-		background-color: transparent;
-		background-image: url('@img/icons/scroll-arrow.svg');
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-
-
 		justify-self: center;
+		background-color: transparent;
 
 		transition: all var(--animation-duration);
 
+		&>svg {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+
+			transition: all var(--animation-duration);
+		}
+
 		@media (hover: hover) {
-			&:hover {
+			&:hover>svg {
 				filter: drop-shadow(0 0 rem(10) var(--clr-action));
 			}
 		}
 
-		@extend %button-actions;
+		&.--active {
+			transform: scale(0.98);
+		}
 
 		@media screen and (max-width: em(768)) {
 			bottom: rem(-75);

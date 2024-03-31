@@ -236,6 +236,14 @@
 			min-width: rem(35);
 		}
 	}
+
+	&__control {
+		background-color: transparent;
+
+		width: rem(24);
+		height: rem(24);
+		object-fit: cover;
+	}
 }
 
 .terms-and-conditions {

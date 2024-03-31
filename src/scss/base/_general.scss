@@ -44,13 +44,13 @@ svg {
 		background: #fff;
 
 		font-size: rem(12);
-		text-transform: uppercase;
 		color: var(--clr-text-dark);
 
 		transition: color var(--animation-duration), outline var(--animation-duration);
 
 		&::placeholder {
 			color: var(--clr-text-dark-050);
+			text-transform: uppercase;
 		}
 
 		@media screen and (max-width: em(768)) {

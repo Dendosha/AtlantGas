@@ -8,6 +8,8 @@
 	// .order-form-modal__dialog
 
 	&__dialog {
+		position: relative;
+
 		display: grid;
 		grid-template-areas: 'title close-button' 'form form';
 		gap: rem(30);
@@ -102,6 +104,27 @@
 
 				font-size: rem(18);
 			}
+		}
+	}
+
+	// .order-form-modal__policy
+
+	&__policy {
+		position: absolute;
+		bottom: rem(-60);
+
+		max-width: rem(460);
+
+		font-family: var(--ff-primary);
+		font-style: italic;
+		font-size: rem(14);
+		text-align: center;
+		color: #fff;
+
+		opacity: 0.6;
+
+		& a {
+			text-decoration: underline;
 		}
 	}
 
