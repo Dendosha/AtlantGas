@@ -33,6 +33,14 @@
 }
 
 @font-face {
+  font-family: RussoOne;
+  font-display: swap;
+  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
@@ -45,14 +53,6 @@
   font-display: swap;
   src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: RussoOne;
-  font-display: swap;
-  src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -236,10 +236,6 @@ svg {
   text-transform: uppercase;
   color: var(--clr-text-dark);
   transition: color var(--animation-duration), outline var(--animation-duration);
-}
-
-.site-form input::-moz-placeholder, .site-form textarea::-moz-placeholder {
-  color: var(--clr-text-dark-050);
 }
 
 .site-form input::placeholder,
@@ -443,7 +439,6 @@ svg {
   position: relative;
   z-index: 2;
   -webkit-user-select: none;
-     -moz-user-select: none;
           user-select: none;
   display: flex;
   align-items: center;
@@ -621,7 +616,7 @@ body.--burger-menu-opened {
 .map__container {
   grid-column: breakout-start/breakout-end;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
   border-radius: 2.1875rem;
   box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.25);
   background-color: var(--clr-secondary);
@@ -691,10 +686,17 @@ body.--burger-menu-opened {
 }
 
 .map__interactive-map {
-  min-height: 30.625rem;
+  height: 30.625rem;
   background-image: url("../img/footer/map-placeholder.png");
   background-size: cover;
   background-position: center;
+}
+
+.map__location-icon {
+  cursor: pointer;
+  min-width: 3.125rem;
+  position: relative;
+  transform: translate(-50%, -100%);
 }
 
 .terms-and-conditions__container {
@@ -1152,8 +1154,7 @@ body.--burger-menu-opened {
 }
 
 .advantages__competitive-advantage-picture {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .advantages__competitive-advantage-text {
@@ -1300,8 +1301,7 @@ body.--burger-menu-opened {
 .testimonials__user-image > * {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .testimonials__user-name {
@@ -1654,7 +1654,7 @@ body.--burger-menu-opened {
   }
 
   .map__interactive-map {
-    min-height: 25rem;
+    height: 25rem;
   }
 
   .header__container {
@@ -1733,10 +1733,8 @@ body.--burger-menu-opened {
   }
 
   .hero__picture > img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: left;
-       object-position: left;
+    object-fit: cover;
+    object-position: left;
     height: 100%;
   }
 
@@ -1840,8 +1838,7 @@ body.--burger-menu-opened {
   }
 
   .map__container {
-    grid-template-columns: revert;
-    grid-auto-rows: 1fr;
+    grid-template-columns: minmax(20rem, 1fr);
     border-radius: 1.875rem;
   }
 
@@ -1854,7 +1851,7 @@ body.--burger-menu-opened {
   }
 
   .map__interactive-map {
-    min-height: revert;
+    height: 18.75rem;
   }
 
   .terms-and-conditions__container {
@@ -2113,6 +2110,10 @@ body.--burger-menu-opened {
 
   .map__contact:not(:last-child) {
     margin-bottom: 1.25rem;
+  }
+
+  .map__location-icon {
+    min-width: 2.1875rem;
   }
 
   .terms-and-conditions__container {
