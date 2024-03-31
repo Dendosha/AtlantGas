@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('./blocks/head.html', {
-"title": "Политика конфиденциальности",
+"title": "Политика конфиденциальности и согласие на обработку данных",
 "pageScript": "",
 })
 
 <body>
-	<object data="files/policy.pdf" type="application/pdf" class="pdf-viewer"></object>
+	<object data="files/policy.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+		<p>
+			<span>Ваш браузер не поддерживает PDF плагин</span>
+			<a href="files/policy.pdf" download style="text-decoration: underline; color: rgb(33, 148, 255);">Скачать PDF
+				файл</a>
+		</p>
+	</object>
 </body>
 
 </html>
