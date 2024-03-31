@@ -19,6 +19,14 @@
 @font-face {
   font-family: OpenSans;
   font-display: swap;
+  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
   src: url("../fonts/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans-Italic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -37,14 +45,6 @@
   font-display: swap;
   src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -233,7 +233,6 @@ svg {
   box-shadow: inset 0 0 0.25rem 0 rgba(0, 0, 0, 0.25);
   background: #fff;
   font-size: 0.75rem;
-  text-transform: uppercase;
   color: var(--clr-text-dark);
   transition: color var(--animation-duration), outline var(--animation-duration);
 }
@@ -241,6 +240,7 @@ svg {
 .site-form input::placeholder,
 .site-form textarea::placeholder {
   color: var(--clr-text-dark-050);
+  text-transform: uppercase;
 }
 
 .site-form__textarea {
@@ -248,7 +248,6 @@ svg {
 }
 
 .--active.partners__partner-link,
-.--active.prices__scrolldown-button,
 .--active.button-small,
 .--active.button-big {
   transform: scale(0.98);
@@ -385,7 +384,7 @@ svg {
 }
 
 .--modal-window {
-  --backdrop-color: rgba(0, 0, 0, 0.5);
+  --backdrop-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -699,6 +698,13 @@ body.--burger-menu-opened {
   transform: translate(-50%, -100%);
 }
 
+.map__control {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
+}
+
 .terms-and-conditions__container {
   grid-column: content-start/content-end;
   display: flex;
@@ -783,6 +789,7 @@ body.--burger-menu-opened {
 }
 
 .order-form-modal__dialog {
+  position: relative;
   display: grid;
   grid-template-areas: "title close-button" "form form";
   gap: 1.875rem;
@@ -828,6 +835,22 @@ body.--burger-menu-opened {
   justify-self: center;
   min-width: 22.5rem;
   min-height: 5.625rem;
+}
+
+.order-form-modal__policy {
+  position: absolute;
+  bottom: -3.75rem;
+  max-width: 28.75rem;
+  font-family: var(--ff-primary);
+  font-style: italic;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.order-form-modal__policy a {
+  text-decoration: underline;
 }
 
 .order-form-modal__selectlist {
@@ -1039,12 +1062,20 @@ body.--burger-menu-opened {
   width: 6.25rem;
   height: 4.0625rem;
   border-radius: 0.625rem;
-  background-color: transparent;
-  background-image: url("../img/icons/scroll-arrow.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   justify-self: center;
+  background-color: transparent;
   transition: all var(--animation-duration);
+}
+
+.prices__scrolldown-button > svg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: all var(--animation-duration);
+}
+
+.prices__scrolldown-button.--active {
+  transform: scale(0.98);
 }
 
 .gas-text-block {
@@ -1555,11 +1586,6 @@ body.--burger-menu-opened {
   min-width: 18.4375rem;
   min-height: 5.625rem;
   text-shadow: 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.25);
-}
-
-.pdf-viewer {
-  width: 100%;
-  height: 100%;
 }
 
 @media screen and (min-width: 23.4375em) {
@@ -2271,7 +2297,6 @@ body.--burger-menu-opened {
 
 @media (hover: hover) {
   .partners__partner-link:hover,
-  .prices__scrolldown-button:hover,
   .button-small:hover,
   .button-big:hover {
     box-shadow: 0 0 0.625rem var(--clr-action);
@@ -2285,7 +2310,7 @@ body.--burger-menu-opened {
     --clr-svg-primary: #000;
   }
 
-  .prices__scrolldown-button:hover {
+  .prices__scrolldown-button:hover > svg {
     filter: drop-shadow(0 0 0.625rem var(--clr-action));
   }
 
