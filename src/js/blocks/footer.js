@@ -1,6 +1,8 @@
 import * as ymaps3 from "ymaps3"
 
 async function initMap() {
+	if (!document.getElementById('interactiveMap')) return
+
 	await ymaps3.ready;
 
 	const { YMapZoomControl, YMapGeolocationControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');

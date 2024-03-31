@@ -1,16 +1,28 @@
 .page {
 
+	&>* {
+		padding-block: rem(40);
+
+		@media screen and (max-width: em(992)) {
+			padding-block: rem(35);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding-block: rem(30);
+		}
+	}
+
 	// .page__hero
 
 	&__hero {
-		padding-block-end: rem(60);
+		padding-block: 0 rem(60);
 
 		@media screen and (max-width: em(992)) {
-			padding-block-end: rem(40);
+			padding-block: 0 rem(40);
 		}
 
 		@media screen and (max-width: em(768)) {
-			padding-block-end: rem(20);
+			padding-block: 0 rem(20);
 		}
 	}
 
@@ -18,28 +30,29 @@
 
 	&__prices {
 		background-color: var(--clr-primary-005);
-		padding-block: rem(45);
-
-		@media screen and (max-width: em(768)) {
-			padding-block: rem(30);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: rem(20);
-		}
 	}
 
 	// .page__advantages
 
 	&__advantages {
-		--margin-top: 18rem;
+		--margin-top: 12rem;
 
-		padding-block-start: rem(60);
+		padding-block: rem(60) 0;
+
+		@media screen and (max-width: em(992)) {
+			--margin-top: 8rem;
+
+			padding-block: rem(60) 0;
+		}
+
+		@media screen and (max-width: em(768)) {
+			--margin-top: 12rem;
+		}
 
 		@media screen and (max-width: em(480)) {
 			--margin-top: 15rem;
 
-			padding-block-start: rem(40);
+			padding-block: rem(40) 0;
 		}
 	}
 
@@ -47,87 +60,29 @@
 
 	&__gas-volumes {
 		background-color: var(--clr-primary-005);
-		padding-block: rem(35) rem(65);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: rem(30) rem(45);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: rem(30);
-		}
 	}
 
 	// .page__testimonials
 
-	&__testimonials {
-		padding-block: rem(40);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: rem(35);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: rem(30);
-		}
-	}
+	&__testimonials {}
 
 	// .page__faq
 
 	&__faq {
 		background-color: var(--clr-primary-005);
-		padding-block: rem(40);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: rem(35);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: rem(30);
-		}
 	}
 
 	// .page__feedback
 
-	&__feedback {
-		padding-block: rem(40);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: rem(35);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: rem(30);
-		}
-	}
+	&__feedback {}
 
 	// .page__partners
 
-	&__partners {
-		padding-block: 0 rem(40);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: 0 rem(35);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: 0 rem(30);
-		}
-	}
+	&__partners {}
 
 	// .page__special-offer
 
-	&__special-offer {
-		padding-block: 0 rem(40);
-
-		@media screen and (max-width: em(992)) {
-			padding-block: 0 rem(35);
-		}
-
-		@media screen and (max-width: em(480)) {
-			padding-block: 0 rem(30);
-		}
-	}
+	&__special-offer {}
 }
 
 // Hero section

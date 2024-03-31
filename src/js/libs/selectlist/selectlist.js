@@ -73,8 +73,6 @@ class SelectList {
 		input.name = this.options.inputName
 		input.classList.add('--visually-hidden')
 
-		console.log(this.options)
-
 		const combobox = document.createElement('div')
 		combobox.innerText = this.options.placeholder
 		combobox.tabIndex = 0

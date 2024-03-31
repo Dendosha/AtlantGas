@@ -1,5 +1,13 @@
 .footer {
-	margin-bottom: rem(70);
+	padding-bottom: rem(70);
+
+	@media screen and (max-width: em(768)) {
+		padding-bottom: rem(50);
+	}
+
+	@media screen and (max-width: em(480)) {
+		padding-bottom: rem(30);
+	}
 
 	// .footer__map
 
@@ -24,14 +32,6 @@
 	// .footer__terms-and-conditions
 
 	&__terms-and-conditions {}
-
-	@media screen and (max-width: em(768)) {
-		margin-bottom: rem(50);
-	}
-
-	@media screen and (max-width: em(480)) {
-		margin-bottom: rem(30);
-	}
 }
 
 .map {
