@@ -53,7 +53,7 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"browserslist": [
-		"defaults"
+		"defaults and fully supports async-functions"
 	],
 	"babel": {
 		"presets": [

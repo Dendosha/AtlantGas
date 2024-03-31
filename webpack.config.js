@@ -1,5 +1,5 @@
 const config = {
-	mode: 'production',
+	mode: 'development',
 	entry: {
 		main: './src/js/main.js',
 		index: './src/js/index.js',
@@ -15,6 +15,11 @@ const config = {
 			}
 		],
 	},
+	externalsType: 'script',
+	externals: {
+		ymaps3: ['https://api-maps.yandex.ru/v3/?apikey=cc838777-989c-4721-a5f1-daa7532b3925&lang=ru_RU', 'ymaps3']
+	},
+	devtool: 'cheap-source-map'
 }
 
 export default config
