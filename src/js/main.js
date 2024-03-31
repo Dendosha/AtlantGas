@@ -8,9 +8,10 @@ selectLists.forEach(element => {
 	const options = {
 		placeholder: element.dataset?.placeholder,
 		label: element.dataset?.label,
-		labelledby: element.dataset?.labelledby,
 		listboxId: element.dataset.listboxId,
+		inputName: element.dataset?.inputName,
 		selectlistItems: element.dataset?.selectlistItems?.split(/;\s*/g),
+		selectlistItemsIdPrefix: element.dataset?.itemsIdPrefix,
 		selectedItemIndex: element.dataset?.selectedItemIndex,
 		visibleItemsCount: 4,
 	}
@@ -29,12 +30,12 @@ pageTabs.forEach(tabs => {
 		openTabCallback: function () {
 			if (tabs !== document.querySelector('.gas-volume-selection')) return
 
-			const orderSelectList = SelectList.find(document.getElementById('order-form-selectlist'))
-			const gasVolumes = document.querySelectorAll('.gas-volumes a[role="tab"]')
+			const gasVolumesSelectList = SelectList.find(document.getElementById('order-form-selectlist'))
+			const gasVolumesTabs = document.querySelectorAll('.gas-volumes a[role="tab"]')
 
-			for (let i = 0; i < gasVolumes.length; i++) {
-				if (gasVolumes[i].getAttribute('aria-selected') === 'true') {
-					orderSelectList.select(`order-form-selectlist-${i}`)
+			for (let i = 0; i < gasVolumesTabs.length; i++) {
+				if (gasVolumesTabs[i].getAttribute('aria-selected') === 'true') {
+					gasVolumesSelectList.select(`gas-volumes-listbox-${i}`)
 					break
 				}
 			}

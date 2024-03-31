@@ -5,6 +5,7 @@ class SelectList {
 	#defaultOptions = {
 		placeholder: 'Default placeholder',
 		label: 'Custom selectlist',
+		inputName: 'selectlistInput',
 		selectlistItems: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
 		visibleItemsCount: 4,
 	}
@@ -17,6 +18,7 @@ class SelectList {
 		if (!this.options.label && !this.options.labelledby) this.options.label = this.#defaultOptions.label
 		if (!this.options.selectlistItems?.filter(Boolean)?.length) this.options.selectlistItems = this.#defaultOptions.selectlistItems
 		if (!this.options.visibleItemsCount) this.options.visibleItemsCount = this.#defaultOptions.visibleItemsCount
+		if (!this.options.inputName) this.options.inputName = this.#defaultOptions.inputName
 
 		const selectlistHTML = this.#render()
 
@@ -68,7 +70,10 @@ class SelectList {
 		input.type = 'text'
 		input.ariaHidden = true
 		input.tabIndex = -1
+		input.name = this.options.inputName
 		input.classList.add('--visually-hidden')
+
+		console.log(this.options)
 
 		const combobox = document.createElement('div')
 		combobox.innerText = this.options.placeholder
@@ -91,7 +96,7 @@ class SelectList {
 		this.options.selectlistItems.forEach((item, index) => {
 			const selectlistItem = document.createElement('li')
 			selectlistItem.innerText = item
-			selectlistItem.id = `${this.options.listboxId}-${index}`
+			selectlistItem.id = `${this.options.selectlistItemsIdPrefix || this.options.listboxId}-${index}`
 			selectlistItem.role = 'option'
 			selectlistItem.setAttribute('aria-selected', false)
 			selectlistItem.classList.add('--selectlist__option')
