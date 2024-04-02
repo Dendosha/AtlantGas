@@ -88,6 +88,46 @@ function handleElementActivation(e) {
 
 
 
+// Form sending
+const formSendModalElement = document.getElementById('form-send-modal')
+const formSendTitle = formSendModalElement.querySelector('.form-send-modal__title')
+const formSendText = formSendModalElement.querySelector('.form-send-modal__text')
+const formSendState = formSendModalElement.querySelector('.form-send-modal__state')
+
+const formSendModalWindow = ModalWindow.all.find(modal => modal.element === formSendModalElement)
+
+for (const form of document.forms) {
+	form.addEventListener('submit', (e) => {
+		e.preventDefault()
+		formSend(form)
+	})
+}
+
+async function formSend(form) {
+	const formData = new FormData(form)
+
+	formSendModalWindow.open()
+
+	let response = await fetch(form.action, {
+		method: 'POST',
+		body: formData,
+	})
+
+	let result = await response.json()
+
+	if (response.ok) {
+		formSendState.classList.add('--ok')
+		formSendTitle.innerText = 'Сообщение отправлено'
+	} else {
+		formSendState.classList.add('--error')
+		formSendTitle.innerText = 'Сообщение не отправлено'
+	}
+
+	formSendText.innerText = result
+}
+
+
+
 // Header script
 import "./blocks/header.js"
 

@@ -16,7 +16,7 @@ async function initMap() {
 				zoom: 16
 			},
 			showScaleInCopyrights: true,
-			behaviors: ['drag', 'pinchZoom', 'mouseTilt'],
+			behaviors: ['drag', 'scrollZoom', 'dblClick', 'mouseTilt', "mouseRotate"],
 			zoomRange: { min: 14, max: 21 },
 		},
 		[

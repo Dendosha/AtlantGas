@@ -10,13 +10,15 @@
 						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</button>
-			<form action="#" class="order-form-modal__form site-form">
-				<input type="text" name="name" placeholder="Имя" class="site-form__text-input outlined-element">
-				<input type="text" name="phone" placeholder="Телефон" class="site-form__text-input outlined-element">
+			<form action="./php/mail/sendmail.php" class="order-form-modal__form site-form">
+				<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
+					class="site-form__text-input site-form__form-field outlined-element">
+				<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+					class="site-form__text-input site-form__form-field outlined-element">
 				<div class="order-form-modal__selectlist-wrapper">
 					<div id="order-form-selectlist" data-custom-element="selectlist" data-placeholder="Выберите объём газа"
 						data-label="Выпадающий список выбора объёма газа" data-listbox-id="gas-volumes-listbox"
-						data-selected-item-index="0" data-input-name="Объём газа"
+						data-selected-item-index="0" data-input-name="gas-volume"
 						data-selectlist-items="Малый 2000 л.; Средний 6000 л.; Стандартный 10 000 л.; Оптовый 40 000 л."
 						class="order-form-modal__selectlist --selectlist">
 					</div>

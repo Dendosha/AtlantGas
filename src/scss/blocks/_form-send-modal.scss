@@ -1,0 +1,117 @@
+.form-send-modal {
+	--clr-action: var(--clr-primary);
+
+	&[data-state="opened"] {
+		& .form-send-modal__state {
+			animation-name: formSendLoadAnimation;
+			animation-duration: 0.8s;
+			animation-iteration-count: infinite;
+
+			&.--ok,
+			&.--error {
+				animation: unset;
+				border: unset;
+
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+
+			&.--ok {
+				background-image: url('@img/icons/success.svg');
+			}
+
+			&.--error {
+				background-image: url('@img/icons/error.svg');
+			}
+		}
+	}
+
+	// .form-send-modal__wrapper
+
+	&__wrapper {}
+
+	// .form-send-modal__dialog
+
+	&__dialog {
+		position: relative;
+
+		display: grid;
+		grid-template-areas: 'title close-button' 'state state' 'text text';
+		gap: rem(30);
+
+		align-items: center;
+		justify-items: center;
+
+		padding: rem(30) rem(30) rem(40);
+		border-radius: rem(35);
+		box-shadow: 0 0 rem(20) 0 rgba(0, 0, 0, 0.25);
+		background-color: #fff;
+
+		@media screen and (max-width: em(675)) {
+			padding: rem(25);
+			border-radius: rem(30);
+		}
+
+		@media screen and (max-width: em(480)) {
+			padding: rem(20);
+			border-radius: rem(15);
+		}
+	}
+
+	// .form-send-modal__title
+
+	&__title {
+		grid-area: title;
+		color: var(--clr-text-highlighted);
+	}
+
+	// .form-send-modal__close-modal-button
+
+	&__close-modal-button {
+		grid-area: close-button;
+		justify-self: end;
+
+		width: rem(32);
+		height: rem(32);
+		padding: rem(4);
+
+		border-radius: rem(4);
+
+		background-color: transparent;
+
+		@media (hover: hover) {
+			&:hover>svg {
+				--clr-svg-primary: #000;
+			}
+		}
+
+		&.--active {
+			transform: scale(0.95);
+		}
+	}
+
+	// .form-send-modal__state
+
+	&__state {
+		grid-area: state;
+
+		width: rem(75);
+		height: rem(75);
+		border-radius: 50%;
+		border-top: rem(2) solid var(--clr-primary);
+		border-left: rem(2) solid var(--clr-primary);
+		border-bottom: rem(2) solid var(--clr-primary);
+
+		border-right: rem(2) solid transparent;
+
+		transform: rotate(0deg);
+	}
+
+	// .form-send-modal__text
+
+	&__text {
+		grid-area: text;
+
+		color: var(--clr-text-dark);
+	}
+}

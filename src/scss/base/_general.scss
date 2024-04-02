@@ -34,8 +34,11 @@ svg {
 		gap: rem(15);
 	}
 
-	& input,
-	& textarea {
+	// .site-form__form-field
+
+	&__form-field {
+		position: relative;
+
 		padding: rem(15) rem(20);
 
 		border: rem(1) solid rgb(222, 222, 222);
@@ -51,6 +54,16 @@ svg {
 		&::placeholder {
 			color: var(--clr-text-dark-050);
 			text-transform: uppercase;
+		}
+
+		&:invalid {
+			background-color: rgb(253, 185, 185);
+		}
+
+		&:focus,
+		&:valid,
+		&:placeholder-shown {
+			background-color: #fff;
 		}
 
 		@media screen and (max-width: em(768)) {
