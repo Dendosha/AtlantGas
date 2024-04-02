@@ -13,10 +13,10 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 
-	<link rel="stylesheet" href="css/main.min.css?_v=20240331213629">
-	<script defer src="js/main.min.js?_v=20240331213629"></script>
+	<link rel="stylesheet" href="css/main.min.css?_v=20240402222121">
+	<script defer src="js/main.min.js?_v=20240402222121"></script>
 	
-	<script defer src="js/index.min.js?_v=20240331213629"></script>
+	<script defer src="js/index.min.js?_v=20240402222121"></script>
 	
 </head>
 
@@ -609,10 +609,13 @@
 			<section class="page__feedback feedback --grid-content">
 				<div class="feedback__container">
 					<h2 class="feedback__title text-big">Не нашли ответа на свой вопрос, задайте его нашему специалисту</h2>
-					<form action="#" class="feedback__form site-form">
-						<input type="text" name="name" placeholder="Имя" class="site-form__text-input outlined-element">
-						<input type="text" name="phone" placeholder="Телефон" class="site-form__text-input outlined-element">
-						<textarea name="question" placeholder="Ваш вопрос" class="site-form__textarea outlined-element"></textarea>
+					<form action="./php/mail/sendmail.php" class="feedback__form site-form">
+						<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
+							class="site-form__text-input site-form__form-field outlined-element">
+						<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+							class="site-form__text-input site-form__form-field outlined-element">
+						<textarea name="question" inputmode="text" required placeholder="Ваш вопрос"
+							class="site-form__textarea site-form__form-field outlined-element"></textarea>
 						<button type="submit" class="site-form__submit-button button-small outlined-element">Задать вопрос</button>
 					</form>
 					<div class="feedback__picture">
@@ -702,13 +705,15 @@
 						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</button>
-			<form action="#" class="order-form-modal__form site-form">
-				<input type="text" name="name" placeholder="Имя" class="site-form__text-input outlined-element">
-				<input type="text" name="phone" placeholder="Телефон" class="site-form__text-input outlined-element">
+			<form action="./php/mail/sendmail.php" class="order-form-modal__form site-form">
+				<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
+					class="site-form__text-input site-form__form-field outlined-element">
+				<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+					class="site-form__text-input site-form__form-field outlined-element">
 				<div class="order-form-modal__selectlist-wrapper">
 					<div id="order-form-selectlist" data-custom-element="selectlist" data-placeholder="Выберите объём газа"
 						data-label="Выпадающий список выбора объёма газа" data-listbox-id="gas-volumes-listbox"
-						data-selected-item-index="0" data-input-name="Объём газа"
+						data-selected-item-index="0" data-input-name="gas-volume"
 						data-selectlist-items="Малый 2000 л.; Средний 6000 л.; Стандартный 10 000 л.; Оптовый 40 000 л."
 						class="order-form-modal__selectlist --selectlist">
 					</div>
@@ -720,6 +725,23 @@
 				Нажимая на кнопку, вы даёте <a href="policy.html" target="_blank" class="site-link">согласие на обработку
 					персональных данных и соглашаетесь с условиями политики конфиденциальности</a>
 			</p>
+		</div>
+	</div>
+</div>
+	<div id="form-send-modal" data-custom-element="dialog" data-state="closed" aria-hidden="true"
+	class="form-send-modal --modal-window">
+	<div class="form-send-modal__wrapper --modal-window__wrapper">
+		<div role="dialog" aria-modal="true" class="form-send-modal__dialog --modal-window__dialog">
+			<p class="form-send-modal__title text-medium">Отправка сообщения</p>
+			<button type="button" data-close-button
+				class="form-send-modal__close-modal-button --modal-window__close-modal-button outlined-element">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M23 1L12.25 11.75M1.5 22.5L12.25 11.75M12.25 11.75L1.5 1L23 22.5"
+						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="form-send-modal__state"></div>
+			<p class="form-send-modal__text"></p>
 		</div>
 	</div>
 </div>
