@@ -93,6 +93,7 @@
 
 	&__listbox-wrapper {
 		position: absolute;
+		z-index: 2;
 		top: 100%;
 
 		border: rem(2) solid transparent;
