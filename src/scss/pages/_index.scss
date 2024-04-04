@@ -504,7 +504,7 @@
 		}
 
 		&.--active {
-			transform: scale(0.98);
+			filter: grayscale(0.4);
 		}
 
 		@media screen and (max-width: em(768)) {
@@ -790,7 +790,7 @@
 		justify-self: center;
 		min-width: rem(300);
 		min-height: rem(90);
-		margin-top: rem(-50);
+		margin-top: rem(-40);
 
 		@media screen and (max-width: em(1200)) {
 			font-size: rem(22);
@@ -1143,8 +1143,14 @@
 				background-color: var(--clr-action);
 
 				@media (hover: hover) {
-					&:hover {}
+					&:hover {
+						box-shadow: 0 0 rem(10) var(--clr-action);
+					}
 				}
+			}
+
+			&.--active {
+				filter: grayscale(0.4);
 			}
 
 			@media screen and (max-width: em(480)) {
@@ -1188,6 +1194,10 @@
 			&:hover {
 				filter: drop-shadow(0 0 rem(10) var(--clr-primary));
 			}
+		}
+
+		&.--active {
+			filter: drop-shadow(0 0 rem(10) var(--clr-primary)) grayscale(0.4);
 		}
 
 		&.swiper-button-disabled {

@@ -1,6 +1,9 @@
 // ===== Custom select =====
 import SelectList from "./libs/selectlist/selectlist.js";
 
+// Imask
+import IMask from 'imask';
+
 // ===== Usage =====
 const selectLists = document.querySelectorAll('[data-custom-element="selectlist"]')
 
@@ -64,14 +67,14 @@ modals.forEach(element => {
 
 
 // Active elements handler
-const activatableElements = Array.from(document.querySelectorAll('button, a'))
+const activatableElements = Array.from(document.querySelectorAll('button, a, .ymaps3x0--button'))
 
 document.documentElement.addEventListener('pointerdown', handleElementActivation)
 document.documentElement.addEventListener('pointerup', handleElementActivation)
 document.documentElement.addEventListener('pointerout', handleElementActivation)
 
 function handleElementActivation(e) {
-	const activatableElement = e.target.closest('button, a')
+	const activatableElement = e.target.closest('button, a, .ymaps3x0--button')
 
 	if (e.type === 'pointerout' && activatableElement) {
 		activatableElement.classList.remove('--active')
@@ -89,14 +92,25 @@ function handleElementActivation(e) {
 
 
 // Form sending
-const formSendModalElement = document.getElementById('form-send-modal')
+const formSendModalElement = document.querySelector('.form-send-modal')
+const orderFormModalElement = document.querySelector('.order-form-modal')
+
 const formSendTitle = formSendModalElement.querySelector('.form-send-modal__title')
 const formSendText = formSendModalElement.querySelector('.form-send-modal__text')
 const formSendState = formSendModalElement.querySelector('.form-send-modal__state')
 
 const formSendModalWindow = ModalWindow.all.find(modal => modal.element === formSendModalElement)
+const orderFormModalWindow = ModalWindow.all.find(modal => modal.element === orderFormModalElement)
 
 for (const form of document.forms) {
+	for (const field of form.elements) {
+		if (field.type === 'tel') {
+			new IMask(field, {
+				mask: '+{7} (000) 000-00-00'
+			})
+		} else continue
+	}
+
 	form.addEventListener('submit', (e) => {
 		e.preventDefault()
 		formSend(form)
@@ -106,24 +120,36 @@ for (const form of document.forms) {
 async function formSend(form) {
 	const formData = new FormData(form)
 
+	form.reset()
+
+	if (orderFormModalElement.getAttribute('data-state') === 'opened') orderFormModalWindow.close()
 	formSendModalWindow.open()
 
-	let response = await fetch(form.action, {
-		method: 'POST',
-		body: formData,
-	})
+	try {
+		let response = await fetch(form.action, {
+			method: 'POST',
+			body: formData,
+		})
 
-	let result = await response.json()
+		let result = await response.json()
 
-	if (response.ok) {
-		formSendState.classList.add('--ok')
-		formSendTitle.innerText = 'Сообщение отправлено'
-	} else {
+		if (response.ok) {
+			formSendState.classList.add('--ok')
+			formSendTitle.innerText = 'Сообщение отправлено'
+		} else {
+			formSendState.classList.add('--error')
+			formSendTitle.innerText = 'Сообщение не отправлено'
+		}
+
+		formSendText.innerText = result
+	} catch (e) {
 		formSendState.classList.add('--error')
 		formSendTitle.innerText = 'Сообщение не отправлено'
+
+		formSendText.innerText = `Произошла ошибка: ${e.message}`
 	}
 
-	formSendText.innerText = result
+	if (formSendModalElement.getAttribute('data-state') === 'closed') formSendModalWindow.open()
 }
 
 

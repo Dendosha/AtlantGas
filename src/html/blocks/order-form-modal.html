@@ -10,10 +10,10 @@
 						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</button>
-			<form action="./php/mail/sendmail.php" class="order-form-modal__form site-form">
+			<form method="post" action="./php/mail/sendmail.php" autocomplete="off" class="order-form-modal__form site-form">
 				<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
 					class="site-form__text-input site-form__form-field outlined-element">
-				<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+				<input name="phone" type="tel" inputmode="tel" pattern="[\d+\s\-\(\)]+" required placeholder="Телефон"
 					class="site-form__text-input site-form__form-field outlined-element">
 				<div class="order-form-modal__selectlist-wrapper">
 					<div id="order-form-selectlist" data-custom-element="selectlist" data-placeholder="Выберите объём газа"

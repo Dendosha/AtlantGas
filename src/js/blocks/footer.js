@@ -51,7 +51,13 @@ async function initMap() {
 	markerElement.src = 'img/icons/location.svg'
 
 	map.addChild(controls);
-	map.addChild(new YMapMarker({ coordinates: [37.772638, 55.547507] }, markerElement))
+	map.addChild(new YMapMarker({
+		coordinates: [37.772638, 55.547507],
+	}, markerElement))
 }
 
-initMap()
+try {
+	initMap()
+} catch (e) {
+	console.error(e.message)
+}

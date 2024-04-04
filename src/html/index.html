@@ -494,10 +494,10 @@
 			<section class="page__feedback feedback --grid-content">
 				<div class="feedback__container">
 					<h2 class="feedback__title text-big">Не нашли ответа на свой вопрос, задайте его нашему специалисту</h2>
-					<form action="./php/mail/sendmail.php" class="feedback__form site-form">
+					<form method="post" action="./php/mail/sendmail.php" autocomplete="off" class="feedback__form site-form">
 						<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
 							class="site-form__text-input site-form__form-field outlined-element">
-						<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+						<input name="phone" type="tel" inputmode="tel" pattern="[\d+\s\-\(\)]+" required placeholder="Телефон"
 							class="site-form__text-input site-form__form-field outlined-element">
 						<textarea name="question" inputmode="text" required placeholder="Ваш вопрос"
 							class="site-form__textarea site-form__form-field outlined-element"></textarea>

@@ -61,6 +61,7 @@
 		]
 	},
 	"dependencies": {
+		"imask": "^7.5.0",
 		"swiper": "^11.0.7"
 	}
 }

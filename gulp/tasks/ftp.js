@@ -16,7 +16,7 @@ const ftp = () => {
 				message: 'Error: <%= error.message %>'
 			})
 		))
-		.pipe(ftpConnect.dest(`/${paths.ftp}/${paths.rootFolder}`))
+		.pipe(ftpConnect.dest(`/www/`))
 }
 
 export default ftp
