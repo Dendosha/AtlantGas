@@ -27,6 +27,14 @@
 @font-face {
   font-family: OpenSans;
   font-display: swap;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
   src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -36,14 +44,6 @@
   font-family: RussoOne;
   font-display: swap;
   src: url("../fonts/RussoOne-Regular.woff2") format("woff2"), url("../fonts/RussoOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -220,6 +220,7 @@ svg {
 }
 
 .site-form {
+  position: relative;
   display: grid;
   grid-auto-rows: min-content;
   gap: 1.5625rem;
@@ -254,20 +255,25 @@ svg {
 
 .site-form__textarea {
   min-height: 7.1875rem;
+  max-height: 16.25rem;
+  resize: vertical;
 }
 
 .--active.partners__partner-link,
+.map .--active.ymaps3x0--button,
 .--active.button-small,
 .--active.button-big {
-  transform: scale(0.98);
+  filter: grayscale(0.4);
 }
 
-.outlined-element {
+.outlined-element,
+.map .ymaps3x0--button {
   outline: 0.125rem solid transparent;
   outline-offset: 0.125rem;
 }
 
-.outlined-element:focus-visible {
+.outlined-element:focus-visible,
+.map .ymaps3x0--button:focus-visible {
   outline: 0.125rem solid var(--clr-action, currentColor);
 }
 
@@ -745,10 +751,32 @@ body.--burger-menu-opened {
 }
 
 .map__control {
-  background-color: transparent;
   width: 1.5rem;
   height: 1.5rem;
   object-fit: cover;
+}
+
+.map .ymaps3x0--controls {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.map .ymaps3x0--controls_vertical > .ymaps3x0--control {
+  margin: 0;
+  display: grid;
+  gap: 0.625rem;
+}
+
+.map .ymaps3x0--zoom-control {
+  background-color: transparent;
+  box-shadow: unset;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.map .ymaps3x0--button {
+  --clr-action: var(--clr-primary);
+  margin: 0;
+  transition: all var(--animation-duration);
 }
 
 .terms-and-conditions__container {
@@ -1196,7 +1224,7 @@ body.--burger-menu-opened {
 }
 
 .prices__scrolldown-button.--active {
-  transform: scale(0.98);
+  filter: grayscale(0.4);
 }
 
 .gas-text-block {
@@ -1334,7 +1362,7 @@ body.--burger-menu-opened {
   justify-self: center;
   min-width: 18.75rem;
   min-height: 5.625rem;
-  margin-top: -3.125rem;
+  margin-top: -2.5rem;
 }
 
 .gas-volume-selection {
@@ -1487,6 +1515,10 @@ body.--burger-menu-opened {
   background-color: var(--clr-action);
 }
 
+.testimonials__slider-pagination > button.--active {
+  filter: grayscale(0.4);
+}
+
 .testimonials__slider-button {
   position: absolute;
   top: 50%;
@@ -1508,6 +1540,10 @@ body.--burger-menu-opened {
 .testimonials__slider-button_next {
   right: -15%;
   transform: translateY(-50%) rotate(180deg);
+}
+
+.testimonials__slider-button.--active {
+  filter: drop-shadow(0 0 0.625rem var(--clr-primary)) grayscale(0.4);
 }
 
 .testimonials__slider-button.swiper-button-disabled {
@@ -2427,6 +2463,7 @@ body.--burger-menu-opened {
 
 @media (hover: hover) {
   .partners__partner-link:hover,
+  .map .ymaps3x0--button:hover,
   .button-small:hover,
   .button-big:hover {
     box-shadow: 0 0 0.625rem var(--clr-action);
@@ -2459,6 +2496,10 @@ body.--burger-menu-opened {
 
   .testimonials__slider-pagination > button:hover {
     background-color: var(--clr-action);
+  }
+
+  .testimonials__slider-pagination > button.swiper-pagination-bullet-active:hover {
+    box-shadow: 0 0 0.625rem var(--clr-action);
   }
 
   .testimonials__slider-button:hover {

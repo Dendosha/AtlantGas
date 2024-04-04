@@ -13,10 +13,10 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 
-	<link rel="stylesheet" href="css/main.min.css?_v=20240402231127">
-	<script defer src="js/main.min.js?_v=20240402231127"></script>
+	<link rel="stylesheet" href="css/main.min.css?_v=20240404181628">
+	<script defer src="js/main.min.js?_v=20240404181628"></script>
 	
-	<script defer src="js/index.min.js?_v=20240402231127"></script>
+	<script defer src="js/index.min.js?_v=20240404181628"></script>
 	
 </head>
 
@@ -609,10 +609,10 @@
 			<section class="page__feedback feedback --grid-content">
 				<div class="feedback__container">
 					<h2 class="feedback__title text-big">Не нашли ответа на свой вопрос, задайте его нашему специалисту</h2>
-					<form action="./php/mail/sendmail.php" class="feedback__form site-form">
+					<form method="post" action="./php/mail/sendmail.php" autocomplete="off" class="feedback__form site-form">
 						<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
 							class="site-form__text-input site-form__form-field outlined-element">
-						<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+						<input name="phone" type="tel" inputmode="tel" pattern="[\d+\s\-\(\)]+" required placeholder="Телефон"
 							class="site-form__text-input site-form__form-field outlined-element">
 						<textarea name="question" inputmode="text" required placeholder="Ваш вопрос"
 							class="site-form__textarea site-form__form-field outlined-element"></textarea>
@@ -705,10 +705,10 @@
 						stroke="var(--clr-svg-primary, #2194FF)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</button>
-			<form action="./php/mail/sendmail.php" class="order-form-modal__form site-form">
+			<form method="post" action="./php/mail/sendmail.php" autocomplete="off" class="order-form-modal__form site-form">
 				<input name="name" type="text" inputmode="text" pattern="[\D]+" required placeholder="Имя"
 					class="site-form__text-input site-form__form-field outlined-element">
-				<input name="phone" type="tel" inputmode="tel" pattern="\d+" required placeholder="Телефон"
+				<input name="phone" type="tel" inputmode="tel" pattern="[\d+\s\-\(\)]+" required placeholder="Телефон"
 					class="site-form__text-input site-form__form-field outlined-element">
 				<div class="order-form-modal__selectlist-wrapper">
 					<div id="order-form-selectlist" data-custom-element="selectlist" data-placeholder="Выберите объём газа"
