@@ -1,7 +1,7 @@
 const configFTP = {
-	host: '31.31.198.105',
-	user: 'u2576358',
-	password: 'R3dtTrDKtN9q4Zz',
+	host: 'l91851ze.beget.tech',
+	user: 'l91851ze_atlant',
+	password: 'K%AkCaO3',
 	parallel: 5,
 }
 

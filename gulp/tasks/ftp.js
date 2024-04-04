@@ -16,7 +16,7 @@ const ftp = () => {
 				message: 'Error: <%= error.message %>'
 			})
 		))
-		.pipe(ftpConnect.dest(`/www/`))
+		.pipe(ftpConnect.dest(`/`))
 }
 
 export default ftp
